@@ -1,0 +1,23 @@
+name: Exercício controlado dos alertas
+on: workflow_dispatch
+permissions:
+  contents: read
+  issues: write
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: node scripts/alert-drill.cjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: exercicio-alertas
+          path: output/relatorios/alertas-exercicio.json

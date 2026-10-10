@@ -1,9 +1,10 @@
 {
-  "estavel": "e67aabda7983256ce8f121028a0eafcf7995b301ef9e06dac7daa57c5af8e1b6",
-  "anterior": null,
+  "estavel": "149752614dfbe4d5fb651479ca079efcb9cc410249e38507196978adf3f0d311",
+  "anterior": "e67aabda7983256ce8f121028a0eafcf7995b301ef9e06dac7daa57c5af8e1b6",
   "canario": null,
   "percentual": 0,
   "releases": [
+    "149752614dfbe4d5fb651479ca079efcb9cc410249e38507196978adf3f0d311",
     "e67aabda7983256ce8f121028a0eafcf7995b301ef9e06dac7daa57c5af8e1b6"
   ],
   "strategy": "azul-verde",

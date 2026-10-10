@@ -1,1 +1,1 @@
-window.ResgateStatus = {"version":"1.0.0","release":"e67aabda7983256ce8f121028a0eafcf7995b301ef9e06dac7daa57c5af8e1b6","canaryPercent":0,"probes":[],"dora":{}};
+window.ResgateStatus = {"version":"1.0.0","release":"149752614dfbe4d5fb651479ca079efcb9cc410249e38507196978adf3f0d311","canaryPercent":0,"probes":[],"dora":{}};

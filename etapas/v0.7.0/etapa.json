@@ -1,0 +1,12 @@
+{
+  "version": "0.7.0",
+  "stage": 7,
+  "responsible": "Davi Marcondes Paes de Souza",
+  "role": "Plataforma e Release",
+  "change": "Ficha de release acessível no jogo e manifesto de integridade do pacote.",
+  "levels": 3,
+  "authorEmail": "266862169+DaviSouza78@users.noreply.github.com",
+  "gitHubAccountVerified": true,
+  "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
+  "humanReview": "Pendente de confirmação pelos integrantes"
+}

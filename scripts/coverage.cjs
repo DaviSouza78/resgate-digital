@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..');
-const output=execFileSync(process.execPath,['--experimental-test-coverage','--test','tests/core.test.cjs','tests/content.test.cjs','tests/loader.test.cjs','tests/publisher.test.cjs'],{cwd:root,encoding:'utf8'});
+const output=execFileSync(process.execPath,['--experimental-test-coverage','--test','tests/core.test.cjs','tests/content.test.cjs','tests/loader.test.cjs','tests/publisher.test.cjs','tests/probe.test.cjs','tests/alerts.test.cjs'],{cwd:root,encoding:'utf8'});
 const dir=path.join(root,'output','relatorios');fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'cobertura.txt'),output);
 const row=output.match(/engine\.js\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)/);
 if(!row)throw new Error('Não foi possível extrair a cobertura do motor');

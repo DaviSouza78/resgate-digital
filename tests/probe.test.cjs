@@ -1,0 +1,6 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');const {probe,alerts}=require('../src/ops/probe.cjs');
+test('integração: sonda registra HTTP, latência, versão e commit do ambiente',async()=>{let ticks=0;const p=await probe('homologacao','https://example.test/hml/',{now:()=>ticks++*123,fetcher:async url=>String(url).includes('version.json')?{ok:true,json:async()=>({version:'1.0.0',commit:'abc'})}:{status:200,arrayBuffer:async()=>new ArrayBuffer(0)}});assert.equal(p.status,200);assert.equal(p.latencyMs,123);assert.equal(p.version,'1.0.0');assert.equal(p.commit,'abc');});
+test('alertas detectam resposta diferente de 200 e latência estritamente acima de 2s',()=>{assert.deepEqual(alerts([{status:500,latencyMs:2001}]),{JogoForaDoAr:true,LatenciaAlta:true});assert.deepEqual(alerts([{status:200,latencyMs:2000}]),{JogoForaDoAr:false,LatenciaAlta:false});});
+test('recuperação deixa os dois alertas inativos',()=>{assert.deepEqual(alerts([{status:200,latencyMs:100}]),{JogoForaDoAr:false,LatenciaAlta:false});});
+test('falha de rede produz HTTP 0 e preserva observação',async()=>{const p=await probe('producao','https://example.test/',{fetcher:async()=>{throw new Error('offline');}});assert.equal(p.status,0);assert.equal(p.version,null);assert.equal(alerts([p]).JogoForaDoAr,true);});

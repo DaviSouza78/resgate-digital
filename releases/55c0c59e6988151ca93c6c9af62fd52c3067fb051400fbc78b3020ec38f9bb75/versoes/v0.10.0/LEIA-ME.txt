@@ -1,0 +1,13 @@
+RESGATE DIGITAL
+Versão 0.10.0
+Responsável designado: Miguel Oliveira de Almeida
+Função: Desenvolvimento e Qualidade
+
+Extraia TODOS os arquivos para uma pasta e abra index.html em um navegador moderno.
+Não é preciso servidor nem internet. Também funciona com um servidor estático local.
+Use Tab e Enter para operar os botões; selecione a velocidade Devagar se preferir.
+
+Mudança desta etapa: Comando condicional e quinto puzzle, com testes das duas alternativas da condição.
+Etapa cumulativa preparada com IA, com commit nominal real; não comprova desenvolvimento humano anterior.
+Código e documentos preparados com assistência de IA: veja AI-USAGE.md.
+Não há cadastro, transmissão de dados, anúncios ou recursos externos.

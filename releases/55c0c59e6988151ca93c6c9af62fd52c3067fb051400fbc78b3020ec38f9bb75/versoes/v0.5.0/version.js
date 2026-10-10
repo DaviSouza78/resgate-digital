@@ -1,0 +1,14 @@
+window.ResgateDigitalVersion = {
+  "version": "0.5.0",
+  "stage": 5,
+  "responsible": "Lucas Souza da Silva",
+  "role": "Produto e Game Design",
+  "change": "Segundo puzzle para aprender orientação e ordem de instruções.",
+  "levels": 2,
+  "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
+  "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02",
+  "versionCommit": "92b43b93de693c7df1784fb074b7b653c7ce91f3",
+  "buildDate": "2026-10-10T01:20:33.281Z",
+  "publication": "artefato",
+  "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
+};

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "levels": [
+    {
+      "id": "sequencia",
+      "title": "Primeiro mergulho",
+      "topic": "Sequência",
+      "learn": "Um algoritmo é uma sequência de instruções. A ordem dos comandos muda o resultado.",
+      "hint": "O submarino começa olhando para a direita. Coloque três comandos Avançar e execute.",
+      "width": 5,
+      "height": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "direction": 0
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "maxBlocks": 8,
+      "par": 3
+    },
+    {
+      "id": "curva",
+      "title": "Contorne o recife",
+      "topic": "Ordem e direção",
+      "learn": "Virar muda a direção, mas não move o personagem. Depurar é observar e corrigir uma sequência.",
+      "hint": "Avance duas vezes, vire à esquerda e avance duas vezes. À esquerda é relativo à direção do submarino.",
+      "width": 5,
+      "height": 5,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "direction": 0
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxBlocks": 9,
+      "par": 5
+    },
+    {
+      "id": "repeticao",
+      "title": "Menos blocos, mais caminho",
+      "topic": "Repetição",
+      "learn": "Um loop repete instruções. Repetir quatro avanços evita escrever o mesmo comando quatro vezes.",
+      "hint": "Escolha 4 no seletor e adicione Repetir avanços. Nesta fase cabem apenas dois blocos.",
+      "width": 6,
+      "height": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "direction": 0
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "maxBlocks": 2,
+      "par": 1
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+RESGATE DIGITAL
+Versão 0.4.0
+Responsável designado: Lucca Castilho costa
+Função: SRE e Segurança
+
+Extraia TODOS os arquivos para uma pasta e abra index.html em um navegador moderno.
+Não é preciso servidor nem internet. Também funciona com um servidor estático local.
+Use Tab e Enter para operar os botões; selecione a velocidade Devagar se preferir.
+
+Mudança desta etapa: Painel local de integridade do conteúdo; validação de fases e ausência de recursos externos.
+Etapa cumulativa preparada com IA, com commit nominal real; não comprova desenvolvimento humano anterior.
+Código e documentos preparados com assistência de IA: veja AI-USAGE.md.
+Não há cadastro, transmissão de dados, anúncios ou recursos externos.

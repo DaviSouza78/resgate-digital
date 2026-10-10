@@ -2,6 +2,25 @@
   "version": "1.0.0",
   "release": "55c0c59e6988151ca93c6c9af62fd52c3067fb051400fbc78b3020ec38f9bb75",
   "canaryPercent": 0,
-  "probes": [],
-  "dora": {}
+  "probes": [
+    {
+      "time": "2026-10-10T01:24:34.518Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 207
+    },
+    {
+      "time": "2026-10-10T01:24:34.518Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 77
+    }
+  ],
+  "dora": {
+    "deploymentFrequency": 4,
+    "leadTimeMinutes": 6.145833333333333,
+    "changeFailureRate": 0,
+    "recoveryMinutes": null,
+    "method": "Últimas 10 execuções completas: jobs deploy-prd; falha = produção sem sucesso; recuperação = Issues alerta fechadas; frequência com janela mínima de 1 dia."
+  }
 }

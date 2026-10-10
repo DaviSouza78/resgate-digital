@@ -33,6 +33,11 @@ if '--strict' in __import__('sys').argv:
         with urllib.request.urlopen(config['publicUrl'],timeout=15) as response:
             if response.status!=200: failures.append('URL pública não retorna 200')
     except Exception as e: failures.append('URL pública inacessível: '+str(e))
+    try:
+        with urllib.request.urlopen(config['publicUrl']+'version.json?triage='+str(datetime.now().timestamp()),timeout=15) as response: deployed=json.load(response)
+        expected=json.loads((target/'version.json').read_text('utf-8'))
+        if deployed.get('commit')!=expected.get('commit') or deployed.get('version')!=expected.get('version'): failures.append('URL pública ainda não corresponde à versão e ao commit deste pacote')
+    except Exception as e: failures.append('Metadados públicos indisponíveis: '+str(e))
     evidence=output/'relatorios'/'revisoes-humanas.json'
     if not evidence.exists() or not json.loads(evidence.read_text('utf-8')).get('passed'): failures.append('Dez PRs com revisão real por outra pessoa e contribuição individual ainda não comprovados')
     for name in ['rollback-publico.json','alertas-exercicio.json']:

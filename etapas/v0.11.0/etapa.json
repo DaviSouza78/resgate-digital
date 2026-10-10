@@ -1,0 +1,12 @@
+{
+  "version": "0.11.0",
+  "stage": 11,
+  "responsible": "Davi Marcondes Paes de Souza",
+  "role": "Plataforma e Release",
+  "change": "Exportação local de resumo da sessão e metadados completos de build reproduzível.",
+  "levels": 5,
+  "authorEmail": "266862169+DaviSouza78@users.noreply.github.com",
+  "gitHubAccountVerified": true,
+  "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
+  "humanReview": "Pendente de confirmação pelos integrantes"
+}

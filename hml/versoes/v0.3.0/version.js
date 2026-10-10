@@ -6,8 +6,9 @@ window.ResgateDigitalVersion = {
   "change": "Identificação de versão na tela e pacote offline versionado.",
   "levels": 1,
   "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
-  "commit": "907d40ff940cc060689ff4c3bbe33027e12772fc",
-  "buildDate": "2026-10-10T01:08:54.947Z",
+  "commit": "10b3589df2762a82574c078108275a03eb3253c8",
+  "versionCommit": "907d40ff940cc060689ff4c3bbe33027e12772fc",
+  "buildDate": "2026-10-10T01:17:26.772Z",
   "publication": "artefato",
   "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
 };

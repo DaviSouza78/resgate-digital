@@ -8,6 +8,6 @@ Não é preciso servidor nem internet. Também funciona com um servidor estátic
 Use Tab e Enter para operar os botões; selecione a velocidade Devagar se preferir.
 
 Mudança desta etapa: Quarto puzzle de depuração, dicas pedagógicas e explicação do aprendizado na tela de vitória.
-Esta etapa é cumulativa e não é um histórico real de commits.
+Etapa cumulativa preparada com IA, com commit nominal real; não comprova desenvolvimento humano anterior.
 Código e documentos preparados com assistência de IA: veja AI-USAGE.md.
 Não há cadastro, transmissão de dados, anúncios ou recursos externos.

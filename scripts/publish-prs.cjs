@@ -1,0 +1,8 @@
+'use strict';
+const cp=require('node:child_process'),fs=require('node:fs'),project=require('../project.json');
+const token=process.env.GITHUB_TOKEN;if(!token)throw new Error('Autenticação de sessão indisponível');
+const plan=JSON.parse(fs.readFileSync('output/relatorios/pr-plan.json','utf8'));
+const env={...process.env,GIT_CONFIG_COUNT:'2',GIT_CONFIG_KEY_0:'http.https://github.com/.extraheader',GIT_CONFIG_VALUE_0:'AUTHORIZATION: basic '+Buffer.from('x-access-token:'+token).toString('base64'),GIT_CONFIG_KEY_1:'credential.helper',GIT_CONFIG_VALUE_1:''};
+const redact=s=>s.replaceAll(token,'[redacted]');
+async function api(endpoint,method='GET',body){const r=await fetch(`https://api.github.com/repos/${project.owner}/${project.name}`+endpoint,{method,headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(30000)});if(!r.ok)throw new Error('GitHub HTTP '+r.status);return r.json();}
+(async()=>{try{cp.execFileSync(process.env.RD_GIT_PATH||'git',['push','--atomic','origin',...plan.map(p=>p.branch)],{env,stdio:['ignore','pipe','pipe']});}catch(e){throw new Error(redact(e.stderr?.toString()||e.message));}const prs=[];for(const p of plan){const existing=await api('/pulls?state=open&head='+encodeURIComponent(project.owner+':'+p.branch));const pr=existing[0]||await api('/pulls','POST',{title:p.title,head:p.branch,base:'main',body:p.body,draft:false});prs.push({number:pr.number,url:pr.html_url,branch:p.branch,commit:p.commit});console.log(pr.html_url);}fs.writeFileSync('output/relatorios/prs.json',JSON.stringify(prs,null,2)+'\n');})().catch(e=>{console.error(redact(e.message));process.exitCode=1;});

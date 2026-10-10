@@ -33,7 +33,9 @@ jobs:
           npm ci
           npm audit --omit=dev --audit-level=critical
           npm sbom --sbom-format=cyclonedx > /tmp/rd-sbom.json
-          python -m pip install reportlab==4.4.10
+          python -m pip install reportlab==4.4.10 pypdf==6.10.0
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
           npm install --prefix /tmp/rd-tools playwright@1.62.1
           /tmp/rd-tools/node_modules/.bin/playwright install --with-deps chromium
       - name: Gitleaks no histórico completo
@@ -43,21 +45,30 @@ jobs:
           tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
           mkdir -p output/relatorios
           /tmp/gitleaks git --redact --report-format json --report-path output/relatorios/gitleaks.json --log-opts='--all'
-      - name: Testes, GDD e build único
+      - name: Lint, testes, GDD e reprodutibilidade
         run: |
+          npm run lint
           npm run test:coverage
           python scripts/gdd_pdf.py
-          npm run build
-          python scripts/package.py
+          npm run test:reproducible
           npm run triagem
-          npm run build:site
-          python scripts/package-site.py
           cp /tmp/rd-sbom.json output/relatorios/npm-sbom.cdx.json
-      - name: E2E offline e site HTTP
+      - name: E2E offline, vídeo real e relatório
         env:
           RESGATE_DIGITAL_PLAYWRIGHT_PATH: /tmp/rd-tools/node_modules/playwright
         run: |
           npm run test:e2e
+          node scripts/pitch.cjs
+          node scripts/dora-report.cjs
+          node scripts/review-evidence.cjs
+          python scripts/report_pdf.py
+          npm run build:site
+          python scripts/package-site.py
+          python scripts/submission.py
+      - name: E2E do site HTTP
+        env:
+          RESGATE_DIGITAL_PLAYWRIGHT_PATH: /tmp/rd-tools/node_modules/playwright
+        run: |
           npm run preview > /tmp/rd-preview.log 2>&1 &
           sleep 2
           npm run test:site
@@ -74,6 +85,7 @@ jobs:
           path: |
             output/relatorios/
             output/pdf/
+            output/video/pitch.*
             output/*.zip
             output/*.sha256
   deploy-hml:

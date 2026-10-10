@@ -10,5 +10,23 @@
     "environment": "homologacao",
     "status": 200,
     "latencyMs": 77
+  },
+  {
+    "time": "2026-10-10T03:32:47.117Z",
+    "environment": "producao",
+    "status": 200,
+    "latencyMs": 214,
+    "version": "1.0.0",
+    "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+    "error": null
+  },
+  {
+    "time": "2026-10-10T03:32:47.117Z",
+    "environment": "homologacao",
+    "status": 200,
+    "latencyMs": 102,
+    "version": "1.0.0",
+    "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+    "error": null
   }
 ]

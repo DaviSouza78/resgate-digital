@@ -5,14 +5,21 @@
   "description": "Puzzle educativo local sobre sequências, repetição e condições.",
   "license": "MIT",
   "scripts": {
-    "test": "node --test tests/core.test.cjs tests/content.test.cjs",
+    "test": "node --test tests/*.test.cjs",
     "test:coverage": "node scripts/coverage.cjs",
     "test:e2e": "node scripts/e2e.cjs",
     "build": "node scripts/build.cjs",
     "build:site": "node scripts/build-site.cjs",
     "preview": "node scripts/preview.cjs",
     "test:site": "node scripts/site-e2e.cjs",
-    "triagem": "node scripts/triagem.cjs"
+    "triagem": "node scripts/triagem.cjs",
+    "lint": "eslint src web site-src scripts tests",
+    "test:reproducible": "node scripts/reproducible.cjs"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "devDependencies": {
+    "eslint": "10.12.0"
+  }
 }

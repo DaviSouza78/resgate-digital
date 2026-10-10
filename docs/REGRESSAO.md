@@ -5,3 +5,5 @@ O carregador preservava a release em sessionStorage entre acessos. Após rollbac
 Correção: o carregador também consulta rollout.revogadas e migra a sessão para a versão estável. O rollback mantém o artefato para auditoria, registra a revogação e atualiza version.json da raiz.
 
 tests/loader.test.cjs reproduz a sessão com release revogada e confirma o redirecionamento; também confirma preservação de sessões válidas e rejeição de identificador inválido. Este defeito de software é diferente do programa intencionalmente errado da quarta missão.
+
+O publicador também cadastrava origin novamente ao executar rollback no mesmo job após produção. A correção reutiliza o remoto existente. tests/publisher.test.cjs usa Git real e um repositório bare temporário: publica duas releases, executa rollback no mesmo workspace, confere version.json e restaura a release seguinte, retirando sua revogação. Somente a API de hospedagem é simulada neste teste.

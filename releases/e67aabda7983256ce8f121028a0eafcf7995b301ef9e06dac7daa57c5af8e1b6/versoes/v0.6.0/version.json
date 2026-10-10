@@ -1,0 +1,13 @@
+{
+  "version": "0.6.0",
+  "stage": 6,
+  "responsible": "Miguel Oliveira de Almeida",
+  "role": "Desenvolvimento e Qualidade",
+  "change": "Comando Repetir e terceiro puzzle, com expansão de ações limitada e testada.",
+  "levels": 3,
+  "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
+  "commit": "34e5104b377ef2fecec5c0357dc9b587730af00b",
+  "buildDate": "2026-10-10T00:57:48.729Z",
+  "publication": "artefato",
+  "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
+}

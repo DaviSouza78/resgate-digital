@@ -1,0 +1,13 @@
+window.ResgateDigitalVersion = {
+  "version": "0.4.0",
+  "stage": 4,
+  "responsible": "Lucca Castilho costa",
+  "role": "SRE e Segurança",
+  "change": "Painel local de integridade do conteúdo; validação de fases e ausência de recursos externos.",
+  "levels": 1,
+  "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
+  "commit": "d507e2627a2f191bb1948261d8cd3bff7ad359df",
+  "buildDate": "2026-10-10T00:57:48.729Z",
+  "publication": "artefato",
+  "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
+};

@@ -1,0 +1,1 @@
+window.ResgateRollout = {"estavel":"e67aabda7983256ce8f121028a0eafcf7995b301ef9e06dac7daa57c5af8e1b6","anterior":null,"canario":null,"percentual":0,"releases":["e67aabda7983256ce8f121028a0eafcf7995b301ef9e06dac7daa57c5af8e1b6"],"strategy":"azul-verde","revogadas":[]};

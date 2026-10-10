@@ -6,9 +6,10 @@ window.ResgateDigitalVersion = {
   "change": "Quarto puzzle de depuração, dicas pedagógicas e explicação do aprendizado na tela de vitória.",
   "levels": 4,
   "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
-  "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02",
+  "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
   "versionCommit": "a1d899bdf75bdd6fc9fc1087a106c200db1ef111",
-  "buildDate": "2026-10-10T01:20:33.281Z",
+  "buildDate": "2026-10-10T03:22:05.000Z",
+  "buildVersion": "0.9.0+ci.45fe0f4f3f05",
   "publication": "artefato",
   "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
 };

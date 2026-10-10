@@ -11,5 +11,8 @@ O jogo distribuído não incorpora bibliotecas, fontes, imagens, áudio ou servi
 | Node.js | https://github.com/nodejs/node | Licenças do runtime; ferramenta de build/teste, não incluída na build |
 | Python | https://www.python.org/ | PSF; ferramenta de empacotamento, não incluída na build |
 | ReportLab | https://www.reportlab.com/ | BSD; ferramenta de geração do PDF, não incluída na build |
+| ESLint | https://github.com/eslint/eslint | MIT; ferramenta de lint, não incluída no jogo |
+| pypdf | https://github.com/py-pdf/pypdf | BSD-3-Clause; validação de PDFs, não incluída no jogo |
+| FFmpeg | https://ffmpeg.org/ | LGPL/GPL conforme build; ferramenta de conversão do vídeo, nenhum binário distribuído |
 
 Não há marcas, personagens ou logotipos de terceiros, inclusive SENAI ou Framework. O jogador controla um submarino genérico desenhado em SVG no código. O SBOM local lista a aplicação sem dependências de runtime. A pipeline também executa npm sbom. Gitleaks 8.30.1 (MIT) é usado somente na CI para verificar segredos; o binário baixado é conferido por SHA-256 e não integra a distribuição.

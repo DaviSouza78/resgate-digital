@@ -1,0 +1,9 @@
+node_modules/
+dist/
+output/
+tmp/
+site/
+.pages-work/
+.env
+.env.*
+!.env.example

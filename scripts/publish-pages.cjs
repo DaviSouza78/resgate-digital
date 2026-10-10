@@ -1,0 +1,22 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
+const mode=process.argv[2];if(!['hml','production','rollback'].includes(mode))throw new Error('Modo inválido');
+const token=process.env.GITHUB_TOKEN,repository=process.env.GITHUB_REPOSITORY;if(!token||!repository)throw new Error('Credenciais de ambiente não disponíveis');
+const work=path.resolve('.pages-work'),source=path.resolve('site');fs.mkdirSync(work,{recursive:true});
+const env={...process.env,GIT_CONFIG_COUNT:'1',GIT_CONFIG_KEY_0:'http.https://github.com/.extraheader',GIT_CONFIG_VALUE_0:'AUTHORIZATION: basic '+Buffer.from('x-access-token:'+token).toString('base64')};
+function git(args){return cp.execFileSync('git',args,{cwd:work,env,encoding:'utf8',stdio:['ignore','pipe','pipe']});}
+function copy(src,dst){fs.mkdirSync(dst,{recursive:true});for(const entry of fs.readdirSync(src,{withFileTypes:true})){const a=path.join(src,entry.name),b=path.join(dst,entry.name);if(entry.isDirectory())copy(a,b);else fs.copyFileSync(a,b);}}
+function write(file,obj){fs.writeFileSync(path.join(work,file),JSON.stringify(obj,null,2)+'\n');}
+git(['init','-b','gh-pages']);git(['remote','add','origin',`https://github.com/${repository}.git`]);
+try{git(['fetch','origin','gh-pages','--depth=1']);git(['checkout','-B','gh-pages','FETCH_HEAD']);}catch(_){/* Primeira publicação: branch ainda não existe. */}
+git(['config','user.name','github-actions[bot]']);git(['config','user.email','41898282+github-actions[bot]@users.noreply.github.com']);
+if(mode==='hml'){copy(path.join(source,'hml'),path.join(work,'hml'));fs.writeFileSync(path.join(work,'.nojekyll'),'');}
+else{
+ let rollout=fs.existsSync(path.join(work,'rollout.json'))?JSON.parse(fs.readFileSync(path.join(work,'rollout.json'),'utf8')):null;
+ if(mode==='rollback'){if(!rollout?.anterior)throw new Error('Não existe uma versão anterior para rollback');const failed=rollout.estavel;rollout={...rollout,estavel:rollout.anterior,anterior:failed,canario:null,percentual:0,revogadas:[...(rollout.revogadas||[]),failed]};}
+ else{const next=JSON.parse(fs.readFileSync(path.join(source,'rollout.json'),'utf8'));const id=next.estavel;const destination=path.join(work,'releases',id);if(fs.existsSync(destination)){if(fs.readFileSync(path.join(destination,'MANIFESTO.sha256'),'utf8')!==fs.readFileSync(path.join(source,'releases',id,'MANIFESTO.sha256'),'utf8'))throw new Error('Release existente é diferente');}else copy(path.join(source,'releases',id),destination);copy(path.join(source,'assets'),path.join(work,'assets'));copy(path.join(source,'status'),path.join(work,'status'));for(const file of ['index.html','404.html','version.json','.nojekyll'])fs.copyFileSync(path.join(source,file),path.join(work,file));rollout={...next,anterior:rollout&&rollout.estavel!==id?rollout.estavel:rollout?.anterior||null,releases:fs.readdirSync(path.join(work,'releases')),revogadas:rollout?.revogadas||[]};}
+ write('rollout.json',rollout);fs.writeFileSync(path.join(work,'rollout.js'),'window.ResgateRollout = '+JSON.stringify(rollout)+';\n');
+}
+git(['add','.']);if(git(['status','--porcelain']).trim()){git(['commit','-m',`deploy: ${mode} via pipeline ${process.env.GITHUB_RUN_ID||'manual-workflow'}`]);git(['push','origin','gh-pages']);}
+async function api(url,method,body){const r=await fetch('https://api.github.com'+url,{method,headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(30000)});const data=await r.json().catch(()=>({}));return {ok:r.ok,status:r.status,data};}
+(async()=>{const prefix='/repos/'+repository;let pages=await api(prefix+'/pages','GET');if(pages.status===404){pages=await api(prefix+'/pages','POST',{source:{branch:'gh-pages',path:'/'},build_type:'legacy'});if(!pages.ok)throw new Error(`Configuração do Pages: HTTP ${pages.status} ${pages.data.message}`);}const build=await api(prefix+'/pages/builds','POST');if(!build.ok&&build.status!==409)throw new Error(`Build do Pages: HTTP ${build.status} ${build.data.message}`);console.log(`Publicação ${mode} enviada ao GitHub Pages.`);})().catch(e=>{console.error(e.message);process.exitCode=1;});

@@ -1,0 +1,148 @@
+name: Esteira Resgate Digital
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: esteira-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Dependências e auditoria de produção
+        run: |
+          npm ci
+          npm audit --omit=dev --audit-level=critical
+          npm sbom --sbom-format=cyclonedx > /tmp/rd-sbom.json
+          python -m pip install reportlab==4.4.10
+          npm install --prefix /tmp/rd-tools playwright@1.62.1
+          /tmp/rd-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Testes, GDD e build único
+        run: |
+          npm run test:coverage
+          python scripts/gdd_pdf.py
+          npm run build
+          python scripts/package.py
+          npm run triagem
+          npm run build:site
+          python scripts/package-site.py
+          cp /tmp/rd-sbom.json output/relatorios/npm-sbom.cdx.json
+      - name: E2E offline e site HTTP
+        env:
+          RESGATE_DIGITAL_PLAYWRIGHT_PATH: /tmp/rd-tools/node_modules/playwright
+        run: |
+          npm run test:e2e
+          npm run preview > /tmp/rd-preview.log 2>&1 &
+          sleep 2
+          npm run test:site
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site-build
+          path: site/
+          include-hidden-files: true
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: evidencias
+          path: |
+            output/relatorios/
+            output/pdf/
+            output/*.zip
+            output/*.sha256
+  deploy-hml:
+    if: github.event_name != 'pull_request'
+    needs: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/download-artifact@v8
+        with:
+          name: site-build
+          path: site
+      - name: Publicar homologação sem recompilar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/publish-pages.cjs hml
+      - name: Regressão contra homologação
+        env:
+          SITE_TEST_URL: https://${{ github.repository_owner }}.github.io/resgate-digital/hml/
+          EXPECTED_COMMIT: ${{ github.sha }}
+          RESGATE_DIGITAL_PLAYWRIGHT_PATH: /tmp/rd-tools/node_modules/playwright
+        run: |
+          npm install --prefix /tmp/rd-tools playwright@1.62.1
+          /tmp/rd-tools/node_modules/.bin/playwright install --with-deps chromium
+          node scripts/smoke.cjs
+  deploy-prd:
+    needs: deploy-hml
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: producao
+      url: https://${{ github.repository_owner }}.github.io/resgate-digital/
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/download-artifact@v8
+        with:
+          name: site-build
+          path: site
+      - name: Promover artefato por azul-verde
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/publish-pages.cjs production
+      - name: Smoke de produção
+        id: smoke
+        continue-on-error: true
+        env:
+          SITE_TEST_URL: https://${{ github.repository_owner }}.github.io/resgate-digital/
+          EXPECTED_COMMIT: ${{ github.sha }}
+          RESGATE_DIGITAL_PLAYWRIGHT_PATH: /tmp/rd-tools/node_modules/playwright
+        run: |
+          npm install --prefix /tmp/rd-tools playwright@1.62.1
+          /tmp/rd-tools/node_modules/.bin/playwright install --with-deps chromium
+          node scripts/smoke.cjs
+      - name: Rollback se o smoke falhar
+        if: steps.smoke.outcome == 'failure'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/publish-pages.cjs rollback
+          exit 1

@@ -1,0 +1,16 @@
+{
+  "versions": [
+    { "version": "0.1.0", "stage": 1, "responsible": "Lucas Souza da Silva", "role": "Produto e Game Design", "change": "Premissa, público-alvo, primeiro puzzle e instruções de sequência.", "levels": 1 },
+    { "version": "0.2.0", "stage": 2, "responsible": "Miguel Oliveira de Almeida", "role": "Desenvolvimento e Qualidade", "change": "Execução animada com destaque do comando atual e feedback de colisão.", "levels": 1 },
+    { "version": "0.3.0", "stage": 3, "responsible": "Davi Marcondes Paes de Souza", "role": "Plataforma e Release", "change": "Identificação de versão na tela e pacote offline versionado.", "levels": 1 },
+    { "version": "0.4.0", "stage": 4, "responsible": "Lucca Castilho costa", "role": "SRE e Segurança", "change": "Painel local de integridade do conteúdo; validação de fases e ausência de recursos externos.", "levels": 1 },
+    { "version": "0.5.0", "stage": 5, "responsible": "Lucas Souza da Silva", "role": "Produto e Game Design", "change": "Segundo puzzle para aprender orientação e ordem de instruções.", "levels": 2 },
+    { "version": "0.6.0", "stage": 6, "responsible": "Miguel Oliveira de Almeida", "role": "Desenvolvimento e Qualidade", "change": "Comando Repetir e terceiro puzzle, com expansão de ações limitada e testada.", "levels": 3 },
+    { "version": "0.7.0", "stage": 7, "responsible": "Davi Marcondes Paes de Souza", "role": "Plataforma e Release", "change": "Ficha de release acessível no jogo e manifesto de integridade do pacote.", "levels": 3 },
+    { "version": "0.8.0", "stage": 8, "responsible": "Lucca Castilho costa", "role": "SRE e Segurança", "change": "Persistência local validada de progresso, aviso de privacidade e botão para apagar dados locais.", "levels": 3 },
+    { "version": "0.9.0", "stage": 9, "responsible": "Lucas Souza da Silva", "role": "Produto e Game Design", "change": "Quarto puzzle de depuração, dicas pedagógicas e explicação do aprendizado na tela de vitória.", "levels": 4 },
+    { "version": "0.10.0", "stage": 10, "responsible": "Miguel Oliveira de Almeida", "role": "Desenvolvimento e Qualidade", "change": "Comando condicional e quinto puzzle, com testes das duas alternativas da condição.", "levels": 5 },
+    { "version": "0.11.0", "stage": 11, "responsible": "Davi Marcondes Paes de Souza", "role": "Plataforma e Release", "change": "Exportação local de resumo da sessão e metadados completos de build reproduzível.", "levels": 5 },
+    { "version": "1.0.0", "stage": 12, "responsible": "Lucca Castilho costa", "role": "SRE e Segurança", "change": "Tela de verificação local do pacote e triagem final com checksums, licenças e regressão.", "levels": 5 }
+  ]
+}

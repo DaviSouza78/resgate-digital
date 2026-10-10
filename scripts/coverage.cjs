@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {execFileSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..');
+const output=execFileSync(process.execPath,['--experimental-test-coverage','--test','tests/core.test.cjs','tests/content.test.cjs'],{cwd:root,encoding:'utf8'});
+const dir=path.join(root,'output','relatorios');fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'cobertura.txt'),output);
+const row=output.match(/engine\.js\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)/);
+if(!row)throw new Error('Não foi possível extrair a cobertura do motor');
+const report={module:'src/core/engine.js',lines:Number(row[1]),branches:Number(row[2]),functions:Number(row[3]),requiredLines:70,passed:Number(row[1])>=70};
+fs.writeFileSync(path.join(dir,'cobertura.json'),JSON.stringify(report,null,2)+'\n');
+if(!report.passed)throw new Error('Cobertura abaixo dos 70% exigidos');
+console.log(JSON.stringify(report,null,2));

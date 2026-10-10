@@ -1,0 +1,9 @@
+{
+  "note": "Atribuição solicitada pelo usuário. Identificadores .invalid são técnicos, não e-mails pessoais ou contas GitHub verificadas. Código e commits preparados com assistência de IA; revisão humana não presumida.",
+  "contributors": [
+    { "name": "Lucas Souza da Silva", "email": "lucas-souza-da-silva@resgate-digital.invalid", "role": "Produto e Game Design", "verifiedGitHubAccount": false },
+    { "name": "Miguel Oliveira de Almeida", "email": "miguel-oliveira-de-almeida@resgate-digital.invalid", "role": "Desenvolvimento e Qualidade", "verifiedGitHubAccount": false },
+    { "name": "Davi Marcondes Paes de Souza", "email": "266862169+DaviSouza78@users.noreply.github.com", "role": "Plataforma e Release", "verifiedGitHubAccount": true },
+    { "name": "Lucca Castilho costa", "email": "lucca-castilho-costa@resgate-digital.invalid", "role": "SRE e Segurança", "verifiedGitHubAccount": false }
+  ]
+}

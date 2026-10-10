@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "levels": [
+    {
+      "id": "sequencia",
+      "title": "Primeiro mergulho",
+      "topic": "Sequência",
+      "learn": "Um algoritmo é uma sequência de instruções. A ordem dos comandos muda o resultado.",
+      "hint": "O submarino começa olhando para a direita. Coloque três comandos Avançar e execute.",
+      "width": 5,
+      "height": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "direction": 0
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "maxBlocks": 8,
+      "par": 3
+    }
+  ]
+}

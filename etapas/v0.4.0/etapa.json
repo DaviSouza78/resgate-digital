@@ -1,0 +1,12 @@
+{
+  "version": "0.4.0",
+  "stage": 4,
+  "responsible": "Lucca Castilho costa",
+  "role": "SRE e Segurança",
+  "change": "Painel local de integridade do conteúdo; validação de fases e ausência de recursos externos.",
+  "levels": 1,
+  "authorEmail": "lucca-castilho-costa@resgate-digital.invalid",
+  "gitHubAccountVerified": false,
+  "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
+  "humanReview": "Pendente de confirmação pelos integrantes"
+}

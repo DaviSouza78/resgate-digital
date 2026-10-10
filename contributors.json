@@ -5,16 +5,19 @@
       "name": "Lucas Souza da Silva",
       "email": "lucas.ssouzasenai@gmail.com",
       "role": "Produto e Game Design",
-      "verifiedGitHubAccount": false
+      "verifiedGitHubAccount": false,
+      "ra": "26179875"
     },
     {
       "name": "Miguel Oliveira de Almeida",
       "email": "miguel.senai2024@gmail.com",
       "role": "Desenvolvimento e Qualidade",
-      "verifiedGitHubAccount": false
+      "verifiedGitHubAccount": false,
+      "ra": "26179933"
     },
     {
       "name": "Davi Marcondes Paes de Souza",
+      "ra": "26180842",
       "email": "davisouza4404@gmail.com",
       "role": "Plataforma e Release",
       "verifiedGitHubAccount": true
@@ -23,7 +26,8 @@
       "name": "Lucca Castilho costa",
       "email": "luccacc.contato@gmail.com",
       "role": "SRE e Segurança",
-      "verifiedGitHubAccount": false
+      "verifiedGitHubAccount": false,
+      "ra": "26179873"
     }
   ]
 }

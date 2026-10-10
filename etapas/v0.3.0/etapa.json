@@ -1,0 +1,12 @@
+{
+  "version": "0.3.0",
+  "stage": 3,
+  "responsible": "Davi Marcondes Paes de Souza",
+  "role": "Plataforma e Release",
+  "change": "Identificação de versão na tela e pacote offline versionado.",
+  "levels": 1,
+  "authorEmail": "266862169+DaviSouza78@users.noreply.github.com",
+  "gitHubAccountVerified": true,
+  "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
+  "humanReview": "Pendente de confirmação pelos integrantes"
+}

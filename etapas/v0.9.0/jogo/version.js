@@ -1,0 +1,13 @@
+window.ResgateDigitalVersion = {
+  "version": "0.9.0",
+  "stage": 9,
+  "responsible": "Lucas Souza da Silva",
+  "role": "Produto e Game Design",
+  "change": "Quarto puzzle de depuração, dicas pedagógicas e explicação do aprendizado na tela de vitória.",
+  "levels": 4,
+  "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
+  "commit": null,
+  "buildDate": "2026-10-09T23:00:00.000Z",
+  "publication": "local",
+  "authorship": "Responsabilidade designada; implementação assistida por IA; contribuição Git ainda não registrada."
+};

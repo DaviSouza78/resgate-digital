@@ -1,0 +1,12 @@
+{
+  "version": "0.9.0",
+  "stage": 9,
+  "responsible": "Lucas Souza da Silva",
+  "role": "Produto e Game Design",
+  "change": "Quarto puzzle de depuração, dicas pedagógicas e explicação do aprendizado na tela de vitória.",
+  "levels": 4,
+  "authorEmail": "lucas-souza-da-silva@resgate-digital.invalid",
+  "gitHubAccountVerified": false,
+  "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
+  "humanReview": "Pendente de confirmação pelos integrantes"
+}

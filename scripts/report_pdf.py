@@ -49,7 +49,7 @@ page()
 heading('6. Esteira, promoção e recuperação')
 paragraph('Push e PR acionam instalação, lint, testes/cobertura, segurança, geração dos PDFs, build e empacotamento. Homologação recebe o artefato aprovado e roda E2E. Produção exige aprovação do ambiente e promove o mesmo artefato. Releases são preservadas por hash; azul-verde troca o ponteiro. Smoke falho aciona rollback automático; workflow manual permite recuperação controlada.')
 rollback=evidence('rollback-publico.json')
-paragraph('Exercício público de rollback: '+(json.dumps(rollback,ensure_ascii=False)[:1400] if rollback else 'workflow preparado, mas execução e tempo de recuperação ainda pendentes. Não há comprovação de menos de cinco minutos até sua execução.'))
+paragraph('Exercício público de rollback: '+(f"recuperação medida em {rollback.get('recoverySeconds','não medido')} segundos; aprovado: {rollback.get('passed',False)}; versão original restaurada: {rollback.get('restored',False)}. Workflow: {rollback.get('rollbackRun','workflow rollback-drill.yml')}. Escopo: {rollback.get('scope','não informado')}. As sondas registradas no JSON verificam HTTP e commit; elas não representam vigilância contínua entre amostras." if rollback else 'workflow preparado, mas execução e tempo de recuperação ainda pendentes. Não há comprovação de menos de cinco minutos até sua execução.'))
 heading('7. Observabilidade e DORA')
 dora=evidence('dora-melhoria.json')
 if dora:

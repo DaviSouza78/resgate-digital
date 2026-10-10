@@ -1,0 +1,87 @@
+name: Triagem final de submissão
+on:
+  workflow_dispatch:
+    inputs:
+      evidence_run:
+        description: ID do workflow com artefatos evidencias e site-build aprovados
+        required: true
+      rollback_run:
+        description: ID da demonstração pública de rollback aprovada
+        required: false
+      alerts_run:
+        description: ID do exercício de alertas aprovado
+        required: false
+      delivery_mode:
+        description: Entrega autorizada mantém ressalvas acadêmicas na triagem
+        type: choice
+        options: [strict, authorized-exceptions]
+        default: strict
+        required: true
+permissions:
+  contents: read
+  actions: read
+jobs:
+  submission:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v8
+        with:
+          name: evidencias
+          run-id: ${{ inputs.evidence_run }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: output
+      - uses: actions/download-artifact@v8
+        with:
+          name: site-build
+          run-id: ${{ inputs.evidence_run }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: site
+      - uses: actions/download-artifact@v8
+        if: inputs.rollback_run != ''
+        with:
+          name: rollback-publico
+          run-id: ${{ inputs.rollback_run }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: output/relatorios
+      - uses: actions/download-artifact@v8
+        if: inputs.alerts_run != ''
+        with:
+          name: exercicio-alertas
+          run-id: ${{ inputs.alerts_run }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: output/relatorios
+      - name: Validar origem, revisões e triagem integral
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DELIVERY_MODE: ${{ inputs.delivery_mode }}
+        run: |
+          python -m pip install reportlab==4.4.10 pypdf==6.10.0
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          mkdir -p dist
+          cp site/hml/jogo/version.json dist/version.json
+          node scripts/review-evidence.cjs
+          python scripts/report_pdf.py
+          if [ "$DELIVERY_MODE" = "authorized-exceptions" ]; then
+            python scripts/submission.py --deliver
+          else
+            python scripts/submission.py --strict
+          fi
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: pacote-submissao
+          path: |
+            output/Resgate-Digital-submissao.zip
+            output/Resgate-Digital-submissao.zip.sha256
+            output/submissao/TRIAGEM.json

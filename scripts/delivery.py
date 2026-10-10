@@ -9,14 +9,14 @@ target=output/'Resgate-Digital-entrega-local.zip'
 files=[]
 for directory in ['src','web','site-src','.github','etapas','content','docs','tests','scripts','dist']:
     files.extend((root/directory).rglob('*'))
-for directory in ['versoes','pacotes','pdf','relatorios']:
+for directory in ['versoes','pacotes','pdf','relatorios','video','submissao']:
     files.extend((output/directory).rglob('*'))
-for name in ['package.json','package-lock.json','versions.json','contributors.json','project.json','README.md','SQUAD.md','THIRD_PARTY.md','AI-USAGE.md','LICENSE','.gitignore']:
+for name in ['package.json','package-lock.json','versions.json','contributors.json','human-contributions.json','submission.json','delivery-exceptions.json','eslint.config.mjs','project.json','README.md','SQUAD.md','THIRD_PARTY.md','AI-USAGE.md','LICENSE','.gitignore']:
     files.append(root/name)
 files.extend([output/'build.zip',output/'build.zip.sha256'])
 with ZipFile(target,'w',compression=ZIP_DEFLATED,compresslevel=9) as z:
     for file in sorted(set(files)):
-        if not file.is_file():
+        if not file.is_file() or 'raw' in file.parts:
             continue
         name=file.relative_to(root).as_posix()
         info=ZipInfo(name,date_time=(2026,1,1,0,0,0))

@@ -1,0 +1,161 @@
+{
+  "scope": "Demonstração real via workflow protegido rollback.yml; aprovação de ambiente delegada pelo usuário e executada por automação. Sem alegação de revisão humana de PR.",
+  "started": "2026-10-10T02:14:08.633Z",
+  "original": "30dda770efc674fc8945cc9d9a0fea7577b5da02",
+  "target": "10b3589df2762a82574c078108275a03eb3253c8",
+  "samples": [
+    {
+      "time": "2026-10-10T02:14:13.595Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:16.193Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:18.714Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:21.269Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:23.842Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:26.371Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:28.963Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:31.605Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:34.196Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:36.735Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:39.473Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:41.973Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    },
+    {
+      "time": "2026-10-10T02:14:44.816Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    }
+  ],
+  "restoreSamples": [
+    {
+      "time": "2026-10-10T02:14:49.200Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:14:52.237Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:14:54.769Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:14:57.342Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:14:59.899Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:02.462Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:04.985Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:07.550Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:10.184Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:12.725Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:15.584Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:18.118Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:20.711Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:23.243Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:25.812Z",
+      "status": 200,
+      "commit": "10b3589df2762a82574c078108275a03eb3253c8"
+    },
+    {
+      "time": "2026-10-10T02:15:28.646Z",
+      "status": 200,
+      "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02"
+    }
+  ],
+  "rollbackRun": "https://github.com/DaviSouza78/resgate-digital/actions/runs/38016229456",
+  "recoverySeconds": 36.183,
+  "passed": true,
+  "restoreRun": "https://github.com/DaviSouza78/resgate-digital/actions/runs/38016267134",
+  "restoreSeconds": 43.595,
+  "restored": true
+}

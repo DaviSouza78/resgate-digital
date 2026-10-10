@@ -46,9 +46,9 @@ Menu/seleção: título, proposta e cinco botões de missão. HUD: grade, direç
 
 Wireframe desktop: topo com nome/ajuda; faixa de missões; coluna esquerda com grade e status; coluna direita com paleta/programa; faixa inferior com aprendizado/dica; rodapé com versão e controles locais. No mobile, as duas colunas se tornam uma coluna vertical. Consulte wireframes.svg e capturas em output/relatorios/.
 
-## 6. Esteira
-
 ![Wireframes](wireframes.svg)
+
+## 6. Esteira
 
 ![Diagrama da esteira](esteira.svg)
 
@@ -56,7 +56,7 @@ Entrega atual local: fonte → validação de esquema e soluções → testes/si
 
 Esteira implementada: PR/push → CI com validação de sintaxe, testes, cobertura, Gitleaks, auditoria, SBOM e GDD → artefato único → homologação e E2E → promoção do mesmo artefato por azul-verde → smoke → rollback automático se falhar. monitor.yml agenda sondas de 15 minutos e Issues de alerta, com dados reais para /status/. Aprovação de produção é uma configuração do ambiente no GitHub.
 
-Repositório público criado e primeiro ciclo de CI/HML/PRD aprovado pela pipeline. version.json registra SHA Git e identificador do artefato. Doze commits de versão e tags têm atribuição nominal solicitada pelo usuário, três por integrante, com e-mails informados. Revisões humanas, dez PRs revisados, RAs, vídeo, relatório acadêmico e demonstração cronometrada de rollback precisam de evidências próprias; não são comprovados apenas pela publicação.
+Repositório público criado e primeiro ciclo de CI/HML/PRD aprovado pela pipeline. version.json registra SHA Git e identificador do artefato. Doze commits de versão e tags têm atribuição nominal solicitada pelo usuário, três por integrante, com e-mails informados. Os quatro RAs constam em SQUAD.md. Vídeo real legendado e relatório técnico são gerados por scripts; revisões humanas, dez PRs revisados, participação acadêmica e demonstração cronometrada de rollback precisam de evidências próprias.
 
 ## 7. Equipe e versões
 

@@ -1,0 +1,7 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cp=require('node:child_process');
+for(const seconds of [900,900.001])test(`gate de homologação ${seconds<=900?'aceita':'bloqueia'} ${seconds} segundos desde push`,()=>{
+ const folder=fs.mkdtempSync(path.join(os.tmpdir(),'rd-budget-'));if(path.dirname(folder)!==path.resolve(os.tmpdir())||!path.basename(folder).startsWith('rd-budget-'))throw new Error('Diretório inválido');const now=Date.now();
+ try{const event=path.join(folder,'event.json'),preload=path.join(folder,'mock.cjs');fs.writeFileSync(event,JSON.stringify({repository:{pushed_at:(now-seconds*1000)/1000}}));fs.writeFileSync(preload,`Date.now=()=>${now};global.fetch=async()=>({ok:true,json:async()=>({created_at:new Date(${now}-1000).toISOString(),html_url:'https://example.test/workflow'})});`);const result=cp.spawnSync(process.execPath,['--require',preload,path.resolve(__dirname,'../scripts/homologation-budget.cjs')],{cwd:folder,env:{...process.env,GITHUB_REPOSITORY:'example/game',GITHUB_RUN_ID:'1',GITHUB_TOKEN:'test-token',GITHUB_EVENT_NAME:'push',GITHUB_EVENT_PATH:event},encoding:'utf8'});const report=JSON.parse(fs.readFileSync(path.join(folder,'output/relatorios/homologacao-tempo.json'),'utf8'));assert.equal(report.passed,seconds<=900);assert.equal(result.status,seconds<=900?0:1);assert.match(report.origin,/pushed_at/);
+ }finally{fs.rmSync(folder,{recursive:true,force:true});}
+});

@@ -28,7 +28,7 @@ for (const v of versions) {
   const publicContent = { schemaVersion:1, levels:content.levels.slice(0,v.levels).map(l => { const copy={...l}; delete copy.solution; return copy; }) };
   fs.writeFileSync(path.join(dir,'levels.js'),'window.ResgateDigitalContent = '+JSON.stringify(publicContent,null,2)+';\n');
   fs.writeFileSync(path.join(dir,'levels.json'),JSON.stringify(publicContent,null,2)+'\n');
-  const metadata = {...v,sourceHash,commit:buildCommit,versionCommit:commitForVersion(v.version),buildDate,publication:'artefato',authorship:'Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida.'};
+  const metadata = {...v,sourceHash,commit:buildCommit,versionCommit:commitForVersion(v.version),buildDate,buildVersion:v.version+'+ci.'+buildCommit.slice(0,12),publication:'artefato',authorship:'Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida.'};
   fs.writeFileSync(path.join(dir,'version.json'),JSON.stringify(metadata,null,2)+'\n');
   fs.writeFileSync(path.join(dir,'version.js'),'window.ResgateDigitalVersion = '+JSON.stringify(metadata,null,2)+';\n');
   for(const file of ['LICENSE','THIRD_PARTY.md','AI-USAGE.md']) fs.copyFileSync(path.join(root,file),path.join(dir,file));

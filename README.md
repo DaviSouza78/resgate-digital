@@ -37,6 +37,6 @@ A pipeline esteira.yml gera o artefato uma vez, publica /hml/, verifica por HTTP
 
 ## Escopo acadêmico
 
-O primeiro ciclo remoto de CI, homologação e produção foi aprovado. docs/REQUISITOS.md distingue implementação de evidência acadêmica: RAs, revisão humana, dez PRs revisados, contribuições em integráveis, vídeo real, relatório final, banca e confirmação de prazos continuam pendentes. Não apresentar esta entrega como aprovação integral do trabalho.
+O primeiro ciclo remoto de CI, homologação e produção foi aprovado. docs/REQUISITOS.md distingue implementação de evidência acadêmica: Os quatro RAs estão preenchidos. Lint, ZIPs reproduzíveis, vídeo real legendado, relatório PDF e pacote de prévia foram preparados; consulte docs/OPERACAO.md. Dez PRs revisados por outra pessoa, contribuição humana, aprovação de produção, prova pública de rollback, triagem final e banca exigem execução/evidências próprias. Não apresentar esta entrega como aprovação integral do trabalho.
 
 Licença MIT, inventário THIRD_PARTY.md e declaração AI-USAGE.md. Sem cadastro, analytics, cookies próprios ou ativos externos. A hospedagem processa requisições conforme as políticas do GitHub.

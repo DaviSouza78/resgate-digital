@@ -17,4 +17,12 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
  }
  async function upload(name,bytes){const r=await fetch(release.upload_url.replace(/\{.*$/,'')+'?name='+encodeURIComponent(name),{method:'POST',headers:{...headers,'Content-Type':'application/octet-stream'},body:bytes,signal:AbortSignal.timeout(60000)});if(!r.ok)throw new Error(`Upload ${name}: HTTP ${r.status}`);}
  console.log('Release '+tag+': pacote, checksum, GDD e SBOM preservados.');
-}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+}
+ // Entrega operacional atual: tag anotada com metadados SemVer, sem acrescentar uma versão de integrante.
+ const metadata=JSON.parse(fs.readFileSync('site/hml/version.json','utf8')),tag='v'+metadata.buildVersion;
+ if(!await api('/git/ref/tags/'+encodeURIComponent(tag))){const annotated=await api('/git/tags','POST',{tag,message:'Entrega operacional CI do mesmo artefato promovido; doze etapas individuais preservadas.',object:metadata.commit,type:'commit',tagger:{name:'github-actions[bot]',email:'41898282+github-actions[bot]@users.noreply.github.com',date:new Date().toISOString()}});await api('/git/refs','POST',{ref:'refs/tags/'+tag,sha:annotated.sha});}
+ let delivery=await api('/releases/tags/'+encodeURIComponent(tag));if(!delivery)delivery=await api('/releases','POST',{tag_name:tag,name:'Resgate Digital — entrega '+metadata.buildVersion,body:'Artefato CI promovido sem recompilar. Doze versões individuais permanecem nas tags anteriores. Esta tag operacional identifica o SHA da entrega, com autoria de automação declarada.'});
+ const zip=fs.readFileSync('site/hml/downloads/resgate-digital-offline.zip');const assets=[['build.zip',zip],['build.zip.sha256',Buffer.from(hash(zip)+'  build.zip\n')],['GDD.pdf',fs.readFileSync('site/hml/docs/GDD.pdf')],['SBOM.cdx.json',fs.readFileSync('site/hml/versoes/v1.0.0/sbom.cdx.json')],['version.json',fs.readFileSync('site/hml/version.json')],['MANIFESTO.sha256',fs.readFileSync('site/hml/MANIFESTO.sha256')],['Relatorio-tecnico.pdf',fs.readFileSync('site/hml/docs/Relatorio-tecnico.pdf')],['pitch.mp4',fs.readFileSync('site/hml/downloads/pitch.mp4')]];
+ for(const [name,bytes] of assets){if(delivery.assets.some(a=>a.name===name))continue;const r=await fetch(delivery.upload_url.replace(/\{.*$/,'')+'?name='+encodeURIComponent(name),{method:'POST',headers:{...headers,'Content-Type':'application/octet-stream'},body:bytes,signal:AbortSignal.timeout(60000)});if(!r.ok)throw new Error(`Entrega ${name}: HTTP ${r.status}`);}
+ console.log('Entrega operacional atual publicada em '+tag+'.');
+})().catch(e=>{console.error(e.message);process.exitCode=1;});

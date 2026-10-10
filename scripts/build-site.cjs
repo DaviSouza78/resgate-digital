@@ -19,7 +19,7 @@ for(const f of ['LICENSE','AI-USAGE.md','THIRD_PARTY.md'])fs.copyFileSync(path.j
 for(const [from,to] of [['pdf/Relatorio-tecnico.pdf','docs/Relatorio-tecnico.pdf'],['video/pitch.mp4','downloads/pitch.mp4'],['video/pitch.srt','downloads/pitch.srt']]){const file=path.join(output,from);if(fs.existsSync(file))fs.copyFileSync(file,path.join(artifact,to));}
 const project=fs.existsSync(path.join(root,'project.json'))?JSON.parse(fs.readFileSync(path.join(root,'project.json'),'utf8')):{};
 const versions=require('../versions.json').versions.map(v=>({...v,commit:git(`v${v.version}^{commit}`)}));
-const commit=process.env.GITHUB_SHA||git('HEAD');const metadata={version:'1.0.0',commit,repository:project.repository||null,levels:5,versions:12};
+const commit=process.env.GITHUB_SHA||git('HEAD');const metadata={version:'1.0.0',buildVersion:'1.0.0+ci.'+commit.slice(0,12),commit,buildDate:require('./build-context.cjs').date,repository:project.repository||null,levels:5,versions:12};
 write(path.join(artifact,'version.json'),metadata);write(path.join(artifact,'site-data.js'),'window.ResgateSiteData = '+JSON.stringify({...metadata,versions,contributors:require('../contributors.json').contributors})+';\n');
 const files=walk(artifact).filter(f=>f.name!=='MANIFESTO.sha256');const releaseId=hash(files.map(f=>f.name+'\n'+hash(fs.readFileSync(f.file))).join('\n'));
 write(path.join(artifact,'MANIFESTO.sha256'),files.map(f=>`${hash(fs.readFileSync(f.file))}  ${f.name}`).join('\n')+'\n');

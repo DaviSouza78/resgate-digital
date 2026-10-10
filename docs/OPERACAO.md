@@ -13,4 +13,6 @@ O projeto mantém doze etapas por integrante e função em SQUAD.md. Atualizaç�
 
 Os RAs foram informados pelo usuário. A inscrição acadêmica, aceite do regulamento e apresentação em banca são atos da equipe. O vídeo demonstra jogo real por automação e não atribui voz ou fala aos integrantes. O relatório contém retrospectiva técnica da preparação assistida por IA; a equipe complementa sua experiência pessoal.
 
+As tags v0.1.0 a v1.0.0 preservam as doze etapas individuais. A entrega operacional corrigida recebe uma tag anotada v1.0.0+ci.<SHA>, com buildVersion no version.json e ativos gerados pela pipeline a partir do mesmo artefato promovido. Isso preserva o histórico das etapas e publica o pacote atual, GDD, SBOM, relatório e vídeo, sem atribuir uma quarta versão a um integrante. Não sobrescrever os ativos históricos para ocultar diferenças de preparação.
+
 Variáveis opcionais de runtime local: RD_NODE_PATH, RD_PYTHON_PATH, RD_GIT_PATH, RD_FFMPEG_PATH, RESGATE_DIGITAL_PLAYWRIGHT_PATH e RESGATE_DIGITAL_BROWSER_PATH. Na CI, os executáveis estão no PATH. Tokens só são lidos do ambiente da sessão; nunca colocar credenciais em arquivos ou comandos de publicação.

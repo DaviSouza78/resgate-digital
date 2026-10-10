@@ -1,0 +1,14 @@
+[
+  {
+    "time": "2026-10-10T01:24:34.518Z",
+    "environment": "producao",
+    "status": 200,
+    "latencyMs": 207
+  },
+  {
+    "time": "2026-10-10T01:24:34.518Z",
+    "environment": "homologacao",
+    "status": 200,
+    "latencyMs": 77
+  }
+]

@@ -1,0 +1,13 @@
+window.ResgateDigitalVersion = {
+  "version": "0.7.0",
+  "stage": 7,
+  "responsible": "Davi Marcondes Paes de Souza",
+  "role": "Plataforma e Release",
+  "change": "Ficha de release acessível no jogo e manifesto de integridade do pacote.",
+  "levels": 3,
+  "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
+  "commit": "166dae830ab87e8b1c9c72f298546dedcf2053bf",
+  "buildDate": "2026-10-10T00:57:48.729Z",
+  "publication": "artefato",
+  "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
+};

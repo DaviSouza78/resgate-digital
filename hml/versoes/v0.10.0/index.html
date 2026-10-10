@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprenda lógica de programação em cinco puzzles curtos com um submarino de resgate.">
+  <title>Resgate Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#game">Ir para o jogo</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Resgate Digital, início"><span class="brand-icon">R</span> RESGATE DIGITAL</a>
+    <a id="site-home" href="../index.html" hidden>← Início</a><button id="help" class="quiet">Como jogar</button>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">EXPEDIÇÃO 01 / O OCEANO DO CONHECIMENTO</p>
+      <h1>Pequenos comandos.<br><span>Grandes descobertas.</span></h1>
+      <p>Ajude o submarino a recuperar estações de conhecimento. Monte um programa, observe o caminho e aprenda com cada tentativa.</p>
+      <div class="intro-meta"><span>Sem cadastro</span><span>Funciona offline</span><span>Aprenda no seu ritmo</span></div>
+    </section>
+    <section id="game" aria-label="Jogo de programação">
+      <nav id="levels" class="levels" aria-label="Escolher missão"></nav>
+      <div class="workspace">
+        <section class="ocean-panel" aria-labelledby="level-title">
+          <div class="panel-head"><div><p class="eyebrow" id="mission-number"></p><h2 id="level-title"></h2></div><span id="topic" class="pill"></span></div>
+          <div id="board" class="board" role="img" aria-label="Mapa da missão"></div>
+          <div class="legend"><span><i class="dot robot-dot"></i>Submarino</span><span><i class="dot goal-dot"></i>Estação</span><span><i class="dot wall-dot"></i>Recife</span></div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        </section>
+        <section class="program-panel" aria-labelledby="program-title">
+          <div class="panel-head"><div><p class="eyebrow">VOCÊ NO COMANDO</p><h2 id="program-title">Monte o caminho</h2></div><span id="block-count" class="pill"></span></div>
+          <p class="small">Adicione comandos na ordem de execução. As curvas são relativas à direção do submarino.</p>
+          <div class="palette">
+            <button data-command="forward"><span aria-hidden="true">↑</span> Avançar</button>
+            <button data-command="left"><span aria-hidden="true">↶</span> Esquerda</button>
+            <button data-command="right"><span aria-hidden="true">↷</span> Direita</button>
+            <div id="repeat-control" class="repeat-control"><label for="repeat-count">Avanços por repetição</label><div><select id="repeat-count"><option value="2">2 vezes</option><option value="3">3 vezes</option><option value="4">4 vezes</option></select><button data-command="repeat">↻ Repetir avanços</button></div></div>
+            <button id="conditional-control" data-command="ifBlocked">◇ Se obstáculo: esquerda; senão: avançar</button>
+          </div>
+          <ol id="program" class="program" aria-label="Seu programa"></ol>
+          <p id="empty-program" class="empty-program">Seu caminho começa com um comando.</p>
+          <div class="editor-tools"><button id="undo" class="quiet">Remover último</button><button id="clear" class="quiet">Limpar programa</button></div>
+          <div class="run-tools"><button id="run" class="primary">▶ Executar</button><button id="reset" class="secondary">↺ Reiniciar tentativa</button></div>
+          <label class="speed-label" for="speed">Velocidade <select id="speed"><option value="420">Normal</option><option value="800">Devagar</option><option value="60">Rápida</option></select></label>
+        </section>
+      </div>
+      <aside class="learning"><div><p class="eyebrow">O QUE VOCÊ ESTÁ APRENDENDO</p><p id="learning-text"></p></div><button id="hint" class="secondary">Ver uma dica</button><p id="hint-text" hidden></p></aside>
+      <section id="local-status" class="local-status" hidden><span class="status-dot"></span><span id="integrity-message"></span><button id="verify" class="quiet" hidden>Verificar jogo</button></section>
+    </section>
+    <footer><div><strong>Resgate Digital</strong><p id="version-label"></p></div><div class="footer-actions"><button id="release-info" class="quiet" hidden>Sobre esta versão</button><button id="export" class="quiet" hidden>Salvar resumo</button><button id="privacy" class="quiet" hidden>Dados locais</button></div></footer>
+  </main>
+  <dialog id="dialog" aria-labelledby="dialog-title"><button id="close-dialog" class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow" id="dialog-kicker"></p><h2 id="dialog-title"></h2><div id="dialog-body"></div><div id="dialog-actions"></div></dialog>
+  <script src="engine.js"></script>
+  <script src="levels.js"></script>
+  <script src="version.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

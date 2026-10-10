@@ -96,6 +96,7 @@ jobs:
     permissions:
       contents: write
       pages: write
+      actions: read
     steps:
       - uses: actions/checkout@v7
         with:
@@ -121,6 +122,15 @@ jobs:
           npm install --prefix /tmp/rd-tools playwright@1.62.1
           /tmp/rd-tools/node_modules/.bin/playwright install --with-deps chromium
           node scripts/smoke.cjs
+      - name: Garantir orçamento de quinze minutos até homologação
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/homologation-budget.cjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: tempo-homologacao
+          path: output/relatorios/homologacao-tempo.json
   deploy-prd:
     needs: deploy-hml
     runs-on: ubuntu-latest

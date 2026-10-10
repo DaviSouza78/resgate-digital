@@ -1,13 +1,13 @@
 # Equipe Resgate Digital
 
-Composição proposta pelo usuário. RAs, data de registro acadêmico e aceite de cada integrante ainda precisam ser confirmados. Nenhuma confirmação histórica de 02/10/2026 é presumida.
+Composição proposta pelo usuário. RAs dos quatro integrantes informados pelo usuário nesta conversa. A data de registro acadêmico e o aceite de cada integrante ainda precisam ser confirmados. Nenhuma confirmação histórica de 02/10/2026 é presumida.
 
 | Integrante | RA | Função única | Etapas de responsabilidade |
 | --- | --- | --- | --- |
-| Lucas Souza da Silva | PENDENTE | Produto e Game Design | v0.1.0, v0.5.0, v0.9.0 |
-| Miguel Oliveira de Almeida | PENDENTE | Desenvolvimento e Qualidade | v0.2.0, v0.6.0, v0.10.0 |
-| Davi Marcondes Paes de Souza | PENDENTE | Plataforma e Release | v0.3.0, v0.7.0, v0.11.0 |
-| Lucca Castilho costa | PENDENTE | SRE e Segurança | v0.4.0, v0.8.0, v1.0.0 |
+| Lucas Souza da Silva | 26179875 | Produto e Game Design | v0.1.0, v0.5.0, v0.9.0 |
+| Miguel Oliveira de Almeida | 26179933 | Desenvolvimento e Qualidade | v0.2.0, v0.6.0, v0.10.0 |
+| Davi Marcondes Paes de Souza | 26180842 | Plataforma e Release | v0.3.0, v0.7.0, v0.11.0 |
+| Lucca Castilho costa | 26179873 | SRE e Segurança | v0.4.0, v0.8.0, v1.0.0 |
 
 ## Responsabilidades conforme a avaliação
 

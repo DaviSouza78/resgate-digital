@@ -18,7 +18,7 @@ const junit = execFileSync(process.execPath,['--test','--test-reporter=junit','t
 fs.writeFileSync(path.join(out,'relatorios','junit.xml'),junit);
 const sourceFiles = ['src/core/engine.js','web/index.html','web/styles.css','web/app.js','content/levels.json','versions.json'];
 const sourceHash = hash(sourceFiles.map(f => f + '\n' + fs.readFileSync(path.join(root,f),'utf8')).join('\n'));
-const buildDate = process.env.SOURCE_DATE_EPOCH ? new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000).toISOString() : new Date().toISOString();
+const buildDate = require('./build-context.cjs').date;
 function commitForVersion(version){try{return execFileSync(process.env.RD_GIT_PATH||'git',['rev-parse','--verify',`v${version}^{commit}`],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch(_){return process.env.GITHUB_SHA||null;}}
 let buildCommit=process.env.GITHUB_SHA||null;try{buildCommit=buildCommit||execFileSync(process.env.RD_GIT_PATH||'git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch(_){}
 for (const v of versions) {

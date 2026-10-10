@@ -1,0 +1,12 @@
+{
+  "version": "0.6.0",
+  "stage": 6,
+  "responsible": "Miguel Oliveira de Almeida",
+  "role": "Desenvolvimento e Qualidade",
+  "change": "Comando Repetir e terceiro puzzle, com expansão de ações limitada e testada.",
+  "levels": 3,
+  "authorEmail": "miguel-oliveira-de-almeida@resgate-digital.invalid",
+  "gitHubAccountVerified": false,
+  "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
+  "humanReview": "Pendente de confirmação pelos integrantes"
+}

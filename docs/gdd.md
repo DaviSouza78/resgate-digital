@@ -48,6 +48,10 @@ Wireframe desktop: topo com nome/ajuda; faixa de missões; coluna esquerda com g
 
 ## 6. Esteira
 
+![Wireframes](wireframes.svg)
+
+![Diagrama da esteira](esteira.svg)
+
 Entrega atual local: fonte → validação de esquema e soluções → testes/sintaxe → geração do GDD → build de 12 etapas → ZIP e SHA-256 → triagem local → teste de navegador offline.
 
 Esteira implementada: PR/push → CI com validação de sintaxe, testes, cobertura, Gitleaks, auditoria, SBOM e GDD → artefato único → homologação e E2E → promoção do mesmo artefato por azul-verde → smoke → rollback automático se falhar. monitor.yml agenda sondas de 15 minutos e Issues de alerta, com dados reais para /status/. Aprovação de produção é uma configuração do ambiente no GitHub.

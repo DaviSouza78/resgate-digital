@@ -4,7 +4,7 @@ const mode=process.argv[2];if(!['hml','production','rollback'].includes(mode))th
 const token=process.env.GITHUB_TOKEN,repository=process.env.GITHUB_REPOSITORY;if(!token||!repository)throw new Error('Credenciais de ambiente não disponíveis');
 const work=path.resolve('.pages-work'),source=path.resolve('site');fs.mkdirSync(work,{recursive:true});
 const env={...process.env,GIT_CONFIG_COUNT:'1',GIT_CONFIG_KEY_0:'http.https://github.com/.extraheader',GIT_CONFIG_VALUE_0:'AUTHORIZATION: basic '+Buffer.from('x-access-token:'+token).toString('base64')};
-function git(args){return cp.execFileSync('git',args,{cwd:work,env,encoding:'utf8',stdio:['ignore','pipe','pipe']});}
+function git(args){return cp.execFileSync(process.env.RD_GIT_PATH||'git',args,{cwd:work,env,encoding:'utf8',stdio:['ignore','pipe','pipe']});}
 function copy(src,dst){fs.mkdirSync(dst,{recursive:true});for(const entry of fs.readdirSync(src,{withFileTypes:true})){const a=path.join(src,entry.name),b=path.join(dst,entry.name);if(entry.isDirectory())copy(a,b);else fs.copyFileSync(a,b);}}
 function write(file,obj){fs.writeFileSync(path.join(work,file),JSON.stringify(obj,null,2)+'\n');}
 git(['init','-b','gh-pages']);try{git(['remote','get-url','origin']);git(['remote','set-url','origin',`https://github.com/${repository}.git`]);}catch(_){git(['remote','add','origin',`https://github.com/${repository}.git`]);}

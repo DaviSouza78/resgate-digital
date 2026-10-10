@@ -1,0 +1,29 @@
+name: Demonstração pública de rollback
+on: workflow_dispatch
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: esteira-refs/heads/main
+  cancel-in-progress: false
+jobs:
+  drill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    environment: producao
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: node scripts/rollback-drill.cjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: rollback-publico
+          path: output/relatorios/rollback-publico.json

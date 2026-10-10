@@ -1,0 +1,122 @@
+[
+  {
+    "version": "0.1.0",
+    "stage": 1,
+    "responsible": "Lucas Souza da Silva",
+    "role": "Produto e Game Design",
+    "change": "Premissa, público-alvo, primeiro puzzle e instruções de sequência.",
+    "levels": 1,
+    "commit": "8a9ddbbbebad1377e80dacd6ad6c28f6f2b9ead8",
+    "email": "lucas-souza-da-silva@resgate-digital.invalid"
+  },
+  {
+    "version": "0.2.0",
+    "stage": 2,
+    "responsible": "Miguel Oliveira de Almeida",
+    "role": "Desenvolvimento e Qualidade",
+    "change": "Execução animada com destaque do comando atual e feedback de colisão.",
+    "levels": 1,
+    "commit": "d7d5abc0f558853b71ff581cf82da1862f117c69",
+    "email": "miguel-oliveira-de-almeida@resgate-digital.invalid"
+  },
+  {
+    "version": "0.3.0",
+    "stage": 3,
+    "responsible": "Davi Marcondes Paes de Souza",
+    "role": "Plataforma e Release",
+    "change": "Identificação de versão na tela e pacote offline versionado.",
+    "levels": 1,
+    "commit": "9b84dbd32becf7ca285505fb74df810c76c8b194",
+    "email": "266862169+DaviSouza78@users.noreply.github.com"
+  },
+  {
+    "version": "0.4.0",
+    "stage": 4,
+    "responsible": "Lucca Castilho costa",
+    "role": "SRE e Segurança",
+    "change": "Painel local de integridade do conteúdo; validação de fases e ausência de recursos externos.",
+    "levels": 1,
+    "commit": "d507e2627a2f191bb1948261d8cd3bff7ad359df",
+    "email": "lucca-castilho-costa@resgate-digital.invalid"
+  },
+  {
+    "version": "0.5.0",
+    "stage": 5,
+    "responsible": "Lucas Souza da Silva",
+    "role": "Produto e Game Design",
+    "change": "Segundo puzzle para aprender orientação e ordem de instruções.",
+    "levels": 2,
+    "commit": "6e3f13c1f62475b6a8a49a2e28310702f6a66b8a",
+    "email": "lucas-souza-da-silva@resgate-digital.invalid"
+  },
+  {
+    "version": "0.6.0",
+    "stage": 6,
+    "responsible": "Miguel Oliveira de Almeida",
+    "role": "Desenvolvimento e Qualidade",
+    "change": "Comando Repetir e terceiro puzzle, com expansão de ações limitada e testada.",
+    "levels": 3,
+    "commit": "34e5104b377ef2fecec5c0357dc9b587730af00b",
+    "email": "miguel-oliveira-de-almeida@resgate-digital.invalid"
+  },
+  {
+    "version": "0.7.0",
+    "stage": 7,
+    "responsible": "Davi Marcondes Paes de Souza",
+    "role": "Plataforma e Release",
+    "change": "Ficha de release acessível no jogo e manifesto de integridade do pacote.",
+    "levels": 3,
+    "commit": "166dae830ab87e8b1c9c72f298546dedcf2053bf",
+    "email": "266862169+DaviSouza78@users.noreply.github.com"
+  },
+  {
+    "version": "0.8.0",
+    "stage": 8,
+    "responsible": "Lucca Castilho costa",
+    "role": "SRE e Segurança",
+    "change": "Persistência local validada de progresso, aviso de privacidade e botão para apagar dados locais.",
+    "levels": 3,
+    "commit": "d0f8dcac51b266f66be80369bafba69ae0738494",
+    "email": "lucca-castilho-costa@resgate-digital.invalid"
+  },
+  {
+    "version": "0.9.0",
+    "stage": 9,
+    "responsible": "Lucas Souza da Silva",
+    "role": "Produto e Game Design",
+    "change": "Quarto puzzle de depuração, dicas pedagógicas e explicação do aprendizado na tela de vitória.",
+    "levels": 4,
+    "commit": "1e0bd747221428cff25533de6adab1f8449748a2",
+    "email": "lucas-souza-da-silva@resgate-digital.invalid"
+  },
+  {
+    "version": "0.10.0",
+    "stage": 10,
+    "responsible": "Miguel Oliveira de Almeida",
+    "role": "Desenvolvimento e Qualidade",
+    "change": "Comando condicional e quinto puzzle, com testes das duas alternativas da condição.",
+    "levels": 5,
+    "commit": "e20b991ad4603b64426ffbd9da53078ef4514833",
+    "email": "miguel-oliveira-de-almeida@resgate-digital.invalid"
+  },
+  {
+    "version": "0.11.0",
+    "stage": 11,
+    "responsible": "Davi Marcondes Paes de Souza",
+    "role": "Plataforma e Release",
+    "change": "Exportação local de resumo da sessão e metadados completos de build reproduzível.",
+    "levels": 5,
+    "commit": "47604f5835fbaef90da3c29731ce23dbdf394485",
+    "email": "266862169+DaviSouza78@users.noreply.github.com"
+  },
+  {
+    "version": "1.0.0",
+    "stage": 12,
+    "responsible": "Lucca Castilho costa",
+    "role": "SRE e Segurança",
+    "change": "Tela de verificação local do pacote e triagem final com checksums, licenças e regressão.",
+    "levels": 5,
+    "commit": "3953644d625aad308092227146d5446b2d7f7f1f",
+    "email": "lucca-castilho-costa@resgate-digital.invalid"
+  }
+]

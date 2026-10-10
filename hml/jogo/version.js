@@ -6,8 +6,8 @@ window.ResgateDigitalVersion = {
   "change": "Tela de verificação local do pacote e triagem final com checksums, licenças e regressão.",
   "levels": 5,
   "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
-  "commit": "3953644d625aad308092227146d5446b2d7f7f1f",
-  "buildDate": "2026-10-10T00:57:48.729Z",
+  "commit": "2e0a89a58936d55e8f57b675c95e9960309eb1b7",
+  "buildDate": "2026-10-10T01:08:54.947Z",
   "publication": "artefato",
   "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
 };

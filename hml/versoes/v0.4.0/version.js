@@ -6,8 +6,8 @@ window.ResgateDigitalVersion = {
   "change": "Painel local de integridade do conteúdo; validação de fases e ausência de recursos externos.",
   "levels": 1,
   "sourceHash": "2857067e7787524a078377a05a16d06ae1550f6e676c2803b9fdd71955c3eb5d",
-  "commit": "d507e2627a2f191bb1948261d8cd3bff7ad359df",
-  "buildDate": "2026-10-10T00:57:48.729Z",
+  "commit": "4998c130b98ce5daf25226152499ffc0d9c87a52",
+  "buildDate": "2026-10-10T01:08:54.947Z",
   "publication": "artefato",
   "authorship": "Responsabilidade designada; implementação e registro preparados com assistência de IA. Revisão humana não presumida."
 };

@@ -1,6 +1,8 @@
 {
   "version": "1.0.0",
-  "commit": "30dda770efc674fc8945cc9d9a0fea7577b5da02",
+  "buildVersion": "1.0.0+ci.45fe0f4f3f05",
+  "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+  "buildDate": "2026-10-10T03:22:05.000Z",
   "repository": "https://github.com/DaviSouza78/resgate-digital",
   "levels": 5,
   "versions": 12

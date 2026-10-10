@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:07,009
+RESGATE DIGITAL • Aprenda lógica de programação em uma expedição de resgate.
+
+2
+00:00:07,009 --> 00:00:12,847
+Para iniciantes: organize comandos, observe o caminho e aprenda com cada tentativa.
+
+3
+00:00:12,847 --> 00:00:18,168
+Sequência: a ordem dos comandos define o movimento do submarino.
+
+4
+00:00:18,168 --> 00:00:23,513
+Objetivo alcançado! O feedback mostra estrelas, pontos e o conceito aprendido.
+
+5
+00:00:23,513 --> 00:00:32,595
+Repetição: um bloco executa vários avanços e reduz o tamanho do programa.
+
+6
+00:00:32,595 --> 00:00:38,052
+Depuração: esta missão começa com um programa errado. Teste e encontre o problema.
+
+7
+00:00:38,052 --> 00:00:44,462
+Errar faz parte: há dicas e tentativas ilimitadas. Corrija os comandos e tente novamente.
+
+8
+00:00:44,462 --> 00:00:50,288
+Condição: se houver obstáculo, vire; caso contrário, avance. São cinco missões curtas.
+
+9
+00:00:50,288 --> 00:00:56,295
+Diferencial: jogo leve para computador e celular, sem cadastro, com ZIP para jogar offline.
+
+10
+00:00:56,295 --> 00:01:01,302
+Equipe: Lucas — Produto; Miguel — Desenvolvimento; Davi — Plataforma; Lucca — SRE e Segurança.
+
+11
+00:01:01,302 --> 00:01:08,849
+Resgate Digital: pequenos comandos, grandes descobertas. Demonstração real automatizada com IA; sem vozes dos integrantes.

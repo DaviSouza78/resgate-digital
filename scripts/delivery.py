@@ -11,7 +11,7 @@ for directory in ['src','web','site-src','.github','etapas','content','docs','te
     files.extend((root/directory).rglob('*'))
 for directory in ['versoes','pacotes','pdf','relatorios','video','submissao']:
     files.extend((output/directory).rglob('*'))
-for name in ['package.json','package-lock.json','versions.json','contributors.json','human-contributions.json','submission.json','eslint.config.mjs','project.json','README.md','SQUAD.md','THIRD_PARTY.md','AI-USAGE.md','LICENSE','.gitignore']:
+for name in ['package.json','package-lock.json','versions.json','contributors.json','human-contributions.json','submission.json','delivery-exceptions.json','eslint.config.mjs','project.json','README.md','SQUAD.md','THIRD_PARTY.md','AI-USAGE.md','LICENSE','.gitignore']:
     files.append(root/name)
 files.extend([output/'build.zip',output/'build.zip.sha256'])
 with ZipFile(target,'w',compression=ZIP_DEFLATED,compresslevel=9) as z:

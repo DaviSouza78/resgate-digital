@@ -1,5 +1,7 @@
 # Ordem de revisão dos dez PRs
 
+Atualização: entrega autorizada pelo usuário com dispensa informada das revisões formais. Consulte [ENTREGA.md](ENTREGA.md) para a exceção, seus limites e a proteção temporária durante integração. A ausência de revisões permanece registrada; não foi substituída por aprovações fictícias.
+
 Branches cumulativas com destino main. Revisar e integrar na ordem abaixo; cada PR exige CI aprovado e revisão real por outra pessoa com permissão adequada. Após os merges anteriores, o diff seguinte se reduz ao seu escopo. Nenhuma revisão humana foi criada por automação.
 
 | Ordem | Branch | Integráveis | Responsável pelo escopo |

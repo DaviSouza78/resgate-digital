@@ -16,6 +16,8 @@ copy(path.join(output,'pacotes'),path.join(artifact,'pacotes'));
 fs.mkdirSync(path.join(artifact,'downloads'),{recursive:true});fs.copyFileSync(path.join(output,'build.zip'),path.join(artifact,'downloads','resgate-digital-offline.zip'));fs.copyFileSync(path.join(output,'build.zip.sha256'),path.join(artifact,'downloads','offline-original.sha256'));
 fs.mkdirSync(path.join(artifact,'docs'),{recursive:true});fs.copyFileSync(path.join(output,'pdf','GDD.pdf'),path.join(artifact,'docs','GDD.pdf'));
 for(const f of ['LICENSE','AI-USAGE.md','THIRD_PARTY.md'])fs.copyFileSync(path.join(root,f),path.join(artifact,'docs',f));
+fs.copyFileSync(path.join(root,'docs','ENTREGA.md'),path.join(artifact,'docs','ENTREGA.md'));
+fs.copyFileSync(path.join(root,'delivery-exceptions.json'),path.join(artifact,'docs','delivery-exceptions.json'));
 for(const [from,to] of [['pdf/Relatorio-tecnico.pdf','docs/Relatorio-tecnico.pdf'],['video/pitch.mp4','downloads/pitch.mp4'],['video/pitch.srt','downloads/pitch.srt']]){const file=path.join(output,from);if(fs.existsSync(file))fs.copyFileSync(file,path.join(artifact,to));}
 const project=fs.existsSync(path.join(root,'project.json'))?JSON.parse(fs.readFileSync(path.join(root,'project.json'),'utf8')):{};
 const versions=require('../versions.json').versions.map(v=>({...v,commit:git(`v${v.version}^{commit}`)}));

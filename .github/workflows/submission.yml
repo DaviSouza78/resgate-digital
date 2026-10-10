@@ -11,6 +11,12 @@ on:
       alerts_run:
         description: ID do exercício de alertas aprovado
         required: false
+      delivery_mode:
+        description: Entrega autorizada mantém ressalvas acadêmicas na triagem
+        type: choice
+        options: [strict, authorized-exceptions]
+        default: strict
+        required: true
 permissions:
   contents: read
   actions: read
@@ -57,6 +63,7 @@ jobs:
       - name: Validar origem, revisões e triagem integral
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DELIVERY_MODE: ${{ inputs.delivery_mode }}
         run: |
           python -m pip install reportlab==4.4.10 pypdf==6.10.0
           sudo apt-get update -qq
@@ -65,7 +72,11 @@ jobs:
           cp site/hml/jogo/version.json dist/version.json
           node scripts/review-evidence.cjs
           python scripts/report_pdf.py
-          python scripts/submission.py --strict
+          if [ "$DELIVERY_MODE" = "authorized-exceptions" ]; then
+            python scripts/submission.py --deliver
+          else
+            python scripts/submission.py --strict
+          fi
       - uses: actions/upload-artifact@v7
         if: always()
         with:

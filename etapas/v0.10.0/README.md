@@ -6,4 +6,4 @@ Comando condicional e quinto puzzle, com testes das duas alternativas da condiç
 
 Abra jogo/index.html para executar esta etapa offline. Trata-se de um snapshot cumulativo criado agora a partir da base preparada com IA, não de uma alegação de desenvolvimento histórico pelo integrante. A atribuição nominal do commit foi solicitada pelo usuário; revisão humana e participação na banca precisam ser confirmadas.
 
-Identificador Git: miguel-oliveira-de-almeida@resgate-digital.invalid. Identificador técnico; não vincula uma conta GitHub pessoal.
+Identificador Git: miguel.senai2024@gmail.com. E-mail informado pelo usuário; associação com a conta individual deve ser confirmada pela equipe.

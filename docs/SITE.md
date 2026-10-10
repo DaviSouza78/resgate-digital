@@ -2,7 +2,7 @@
 
 Repositório: https://github.com/DaviSouza78/resgate-digital
 
-Endereço planejado de produção: https://davisouza78.github.io/resgate-digital/
+Endereço de produção: https://davisouza78.github.io/resgate-digital/
 
 ## Estrutura exigida pela avaliação
 
@@ -24,7 +24,7 @@ npm run preview
 
 Fontes: site-src/. Resultado gerado: site/ (ignorado pelo Git). A branch gh-pages recebe os arquivos exclusivamente pelo workflow .github/workflows/esteira.yml. O job ci constrói o artefato uma vez e executa os testes; deploy-hml publica e verifica o jogo por HTTP; deploy-prd promove o mesmo artefato por azul-verde e executa smoke, revertendo se houver falha. rollback.yml permite rollback manual pela pipeline sem recompilar.
 
-O ambiente producao pode exigir aprovação do proprietário nas configurações do GitHub. A publicação inicial ainda está sendo validada; não apresentar esta documentação como prova de deploy, rollback cronometrado, alertas ou entrega acadêmica antes das respectivas evidências.
+O primeiro ciclo de CI/HML/PRD foi aprovado. A publicação inicial foi autorizada pelo usuário; a aprovação para futuras promoções pode ser configurada no ambiente producao. monitor.yml usa sondas de 15 minutos, armazenamento CSV em observabilidade e Issues de alerta. Rollback cronometrado, alertas sob falha real, revisões humanas e entrega acadêmica requerem evidências próprias.
 
 ## Privacidade e segurança
 

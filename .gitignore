@@ -4,6 +4,7 @@ output/
 tmp/
 site/
 .pages-work/
+.monitor-*/
 .env
 .env.*
 !.env.example

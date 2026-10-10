@@ -1,46 +1,42 @@
 # Resgate Digital
 
-Protótipo simples de programação por comandos. O jogador controla um submarino que recupera estações de conhecimento: o jogador organiza instruções e observa sua execução em uma grade 2D.
+Puzzle educativo simples: programe um submarino para resgatar estações de conhecimento. Cinco fases ensinam sequência, direção, repetição, depuração e condição.
 
-## Jogar agora, sem internet
+Site: https://davisouza78.github.io/resgate-digital/
 
-Abra `dist/index.html` no navegador. Alternativamente, extraia **todos** os arquivos de `output/build.zip` e abra `index.html`. Não abra o HTML ainda dentro do visualizador do ZIP. Nenhum servidor é necessário.
+Repositório: https://github.com/DaviSouza78/resgate-digital
 
-Há cinco fases curtas: sequência, direção, repetição, depuração e condição. Comandos: avançar, esquerda, direita, repetir de 2 a 4 avanços, e "se obstáculo: esquerda; senão: avançar". Vitória: alcançar a estação. Derrota: colisão ou fim dos comandos antes do objetivo. Tentativas ilimitadas, dicas e execução lenta. Progresso salvo apenas neste navegador, com botão para apagar.
+## Jogar offline
 
-## As 12 versões
+Baixe o ZIP no site, extraia todos os arquivos e abra index.html no navegador. Não exige instalação, servidor ou executável .exe. Todos os pacotes estão abaixo de 25 MB. Há tentativas ilimitadas, dicas, velocidade ajustável e progresso local apagável.
 
-Consulte `docs/VERSOES.md`. Cada pasta `output/versoes/vX.Y.Z/` tem um jogo local cumulativo, e cada ZIP em `output/pacotes/` é independente. São **três etapas por pessoa**, com função fixa alinhada ao trabalho. Essas etapas não constituem commits humanos ou releases no GitHub.
+## Equipe e versões
 
-## Construir e verificar
+Doze etapas cumulativas, com uma função fixa e três commits de versão por integrante. Consulte SQUAD.md, docs/VERSOES.md e docs/COMMITS.md. Os e-mails foram fornecidos pelo usuário. Código, snapshots e commits preparados com IA; revisão e participação humanas não são presumidas. Essas etapas não substituem os PRs revisados e contribuições em três integráveis exigidos pela avaliação.
 
-Node.js 22 ou posterior e Python 3. O runtime do jogo não tem dependências.
+## Build e validação
+
+Node.js >=22, Python 3 com ReportLab e Playwright como ferramenta de teste. O jogo não tem dependências de runtime.
 
 ```text
 npm ci
-npm test
 npm run test:coverage
+python scripts/gdd_pdf.py
 npm run build
 python scripts/package.py
 npm run triagem
+npm run build:site
+python scripts/package-site.py
+npm run preview
+npm run test:site
 ```
 
-O PDF do GDD é gerado antes do build por `python scripts/gdd_pdf.py` (exige ReportLab); ele será integrado à futura pipeline. Para o teste de navegador, disponibilize Playwright por `RESGATE_DIGITAL_PLAYWRIGHT_PATH` ou instale-o em um ambiente de ferramentas separado e rode `npm run test:e2e`. A variável deve apontar ao módulo Playwright; o navegador Chromium também deve estar instalado no ambiente dessa ferramenta. Nenhum desses recursos entra no jogo.
+RESGATE_DIGITAL_PLAYWRIGHT_PATH aponta ao módulo instalado separadamente; RESGATE_DIGITAL_BROWSER_PATH pode apontar ao Chrome. npm run test:e2e testa o jogo offline. Relatórios, capturas, cobertura, JUnit, GDD e pacotes ficam em output/.
 
-Se usar Chrome já instalado em vez do Chromium gerenciado por Playwright, informe o caminho do executável em `RESGATE_DIGITAL_BROWSER_PATH`.
+A pipeline esteira.yml gera o artefato uma vez, publica /hml/, verifica por HTTP e promove o mesmo conteúdo para /releases/<sha256>/. version.json registra também o SHA Git. A raiz usa rollout.json; rollback.yml troca a versão estável sem recompilar. monitor.yml registra sondas e alertas; /status/ apresenta métricas observadas. Consulte docs/SITE.md.
 
-Relatórios em `output/relatorios/`: JUnit, cobertura, E2E, build, pacotes e triagem local. O build valida conteúdo, soluções e sintaxe JavaScript. O empacotamento usa ZIP com timestamps fixos. Para reproduzir o pacote byte a byte, use o mesmo código, PDF e valor de `SOURCE_DATE_EPOCH`.
+## Escopo acadêmico
 
-## Escopo e limitações
+O primeiro ciclo remoto de CI, homologação e produção foi aprovado. docs/REQUISITOS.md distingue implementação de evidência acadêmica: RAs, revisão humana, dez PRs revisados, contribuições em integráveis, vídeo real, relatório final, banca e confirmação de prazos continuam pendentes. Não apresentar esta entrega como aprovação integral do trabalho.
 
-Esta entrega implementa o **jogo local**, sua documentação e verificação. A criação do repositório e a publicação do site foram adiadas a pedido do usuário. Não há GitHub Actions, site público, PRs, aprovação de produção, ambientes HML/PRD, monitoramento remoto, métricas DORA, vídeo real ou demonstração de rollback. Consulte `docs/REQUISITOS.md`: não apresentar a triagem local como aprovação integral da avaliação.
-
-O campo `commit` de version.json é nulo enquanto não houver repositório; `sourceHash` verifica o conteúdo local e não substitui SHA de commit. A licença MIT é proposta, a confirmar pela equipe. RAs e aceite real ainda pendentes.
-
-## Git futuro
-
-Estratégia proposta: GitHub Flow, `main` protegida, branches `feature/*` curtas, uma revisão por outra pessoa e CI aprovado antes do merge. Conventional Commits e tags anotadas. Preservar o histórico real; não retroagir datas nem fabricar participação. O versionamento local de doze etapas não substitui a tag de prévia nem o registro histórico exigido pelo professor.
-
-## Privacidade
-
-Nenhum dado identificável é solicitado, nenhum servidor é contatado e não existe telemetria. Apenas um mapa `{fase: estrelas}` é salvo no localStorage a partir de v0.8.0; se o navegador bloquear o armazenamento, o jogo continua sem persistência. Não há cookies, ranking ou fontes remotas.
+Licença MIT, inventário THIRD_PARTY.md e declaração AI-USAGE.md. Sem cadastro, analytics, cookies próprios ou ativos externos. A hospedagem processa requisições conforme as políticas do GitHub.

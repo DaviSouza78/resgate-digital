@@ -1,6 +1,6 @@
 # Resgate Digital — Game Design Document
 
-Versão do GDD: 1.0.0. Data da entrega local: 09/10/2026. Repositório e URL pública: pendentes, por decisão do usuário.
+Versão do GDD: 1.0.0. Data da preparação: 09/10/2026. Repositório: https://github.com/DaviSouza78/resgate-digital. Site: https://davisouza78.github.io/resgate-digital/.
 
 ## 1. Premissa
 
@@ -38,7 +38,7 @@ Acessibilidade: botões nativos operáveis por teclado, foco visível, texto em 
 
 O conceito combina o exercício educativo de sequenciar comandos em uma grade com uma narrativa própria de resgate subaquático. Não foi reproduzido personagem, imagem, música ou fase de outro jogo. As fontes de requisitos são Avaliação.html (avaliação SENAI fornecida pelo usuário) e Regulamento-Framework-Arcade.pdf (itens 1.2 e 6.3, arquivo fornecido). Esses documentos orientam o escopo e não foram incorporados como ativos no jogo.
 
-Código, CSS, SVG e puzzles criados para este projeto com assistência de OpenAI Codex. Licença MIT proposta; dependências e ferramentas registradas em THIRD_PARTY.md. Uso de IA e revisão humana pendente registrados em AI-USAGE.md. A equipe confirma a licença antes da publicação.
+Código, CSS, SVG e puzzles criados para este projeto com assistência de OpenAI Codex. Publicação autorizada pelo usuário sob licença MIT; dependências e ferramentas registradas em THIRD_PARTY.md. Uso de IA e revisão humana pendente registrados em AI-USAGE.md.
 
 ## 5. Telas e wireframes
 
@@ -50,9 +50,9 @@ Wireframe desktop: topo com nome/ajuda; faixa de missões; coluna esquerda com g
 
 Entrega atual local: fonte → validação de esquema e soluções → testes/sintaxe → geração do GDD → build de 12 etapas → ZIP e SHA-256 → triagem local → teste de navegador offline.
 
-Esteira futura exigida: PR/push → CI com lint, testes, cobertura, segurança, SBOM e GDD → artefato build.zip → homologação e E2E → aprovação de produção → promoção do mesmo artefato por azul-verde ou canário → smoke → rollback automático se falhar. Monitoramento e DORA fecham o ciclo.
+Esteira implementada: PR/push → CI com validação de sintaxe, testes, cobertura, Gitleaks, auditoria, SBOM e GDD → artefato único → homologação e E2E → promoção do mesmo artefato por azul-verde → smoke → rollback automático se falhar. monitor.yml agenda sondas de 15 minutos e Issues de alerta, com dados reais para /status/. Aprovação de produção é uma configuração do ambiente no GitHub.
 
-Repositório: ainda não criado. Produção/HML: ainda não publicadas. O diagrama acima é planejamento; não há evidência de execução remota nesta entrega. version.json usa hash do conteúdo local e commit nulo até a criação do Git.
+Repositório público criado e primeiro ciclo de CI/HML/PRD aprovado pela pipeline. version.json registra SHA Git e identificador do artefato. Doze commits de versão e tags têm atribuição nominal solicitada pelo usuário, três por integrante, com e-mails informados. Revisões humanas, dez PRs revisados, RAs, vídeo, relatório acadêmico e demonstração cronometrada de rollback precisam de evidências próprias; não são comprovados apenas pela publicação.
 
 ## 7. Equipe e versões
 

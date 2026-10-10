@@ -13,9 +13,9 @@ Composição proposta pelo usuário. RAs, data de registro acadêmico e aceite d
 
 - Lucas: GDD, público-alvo, backlog, conteúdo pedagógico, jogabilidade, testes com usuários e roteiro do vídeo (INT-02 e INT-10).
 - Miguel: arquitetura do jogo, unidade, integração, regressão E2E e smoke (INT-04).
-- Davi: build, pacotes, releases, futura pipeline, ambientes, entrega progressiva e rollback (INT-03, INT-06 e INT-07).
-- Lucca: integridade, privacidade, segurança, inventário de licenças, futura observabilidade, alertas, DORA e triagem (INT-05, INT-08 e INT-09).
+- Davi: build, pacotes, releases, pipeline, ambientes, entrega progressiva e rollback (INT-03, INT-06 e INT-07).
+- Lucca: integridade, privacidade, segurança, inventário de licenças, observabilidade, alertas, DORA e triagem (INT-05, INT-08 e INT-09).
 
 O dono de uma função não trabalha isoladamente: todos devem implementar e revisar contribuições em pelo menos três integráveis. Ter três versões atribuídas NÃO satisfaz, por si só, esse requisito. O professor verifica commits, PRs revisados e participação na banca.
 
-O protótipo e as etapas foram preparados com assistência de IA. O usuário autorizou o registro de três commits de etapa por autor nominal; consulte contributors.json e docs/COMMITS.md. Os identificadores técnicos não comprovam vínculo com contas pessoais. Não foram inventados PRs revisados, datas históricas, assinaturas humanas ou participação na banca.
+O protótipo e as etapas foram preparados com assistência de IA. O usuário autorizou o registro de três commits de etapa por autor nominal; consulte contributors.json e docs/COMMITS.md. Os e-mails foram fornecidos pelo usuário; a equipe confirma sua associação às contas pessoais. Não foram inventados PRs revisados, datas históricas, assinaturas humanas ou participação na banca.

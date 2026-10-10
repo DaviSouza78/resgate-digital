@@ -36,6 +36,13 @@ jobs:
           python -m pip install reportlab==4.4.10
           npm install --prefix /tmp/rd-tools playwright@1.62.1
           /tmp/rd-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Gitleaks no histórico completo
+        run: |
+          curl --fail --location --silent --show-error https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz -o /tmp/gitleaks.tar.gz
+          echo '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  /tmp/gitleaks.tar.gz' | sha256sum --check
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          mkdir -p output/relatorios
+          /tmp/gitleaks git --redact --report-format json --report-path output/relatorios/gitleaks.json --log-opts='--all'
       - name: Testes, GDD e build único
         run: |
           npm run test:coverage
@@ -146,3 +153,24 @@ jobs:
         run: |
           node scripts/publish-pages.cjs rollback
           exit 1
+  releases:
+    needs: deploy-prd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/download-artifact@v8
+        with:
+          name: site-build
+          path: site
+      - name: Publicar as doze releases a partir do mesmo build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/releases.cjs

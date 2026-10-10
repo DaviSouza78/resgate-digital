@@ -5,8 +5,9 @@
   "role": "Plataforma e Release",
   "change": "Ficha de release acessível no jogo e manifesto de integridade do pacote.",
   "levels": 3,
-  "authorEmail": "266862169+DaviSouza78@users.noreply.github.com",
+  "authorEmail": "davisouza4404@gmail.com",
   "gitHubAccountVerified": true,
   "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
-  "humanReview": "Pendente de confirmação pelos integrantes"
+  "humanReview": "Pendente de confirmação pelos integrantes",
+  "identitySource": "E-mail fornecido pelo usuário"
 }

@@ -5,8 +5,9 @@
   "role": "SRE e Segurança",
   "change": "Tela de verificação local do pacote e triagem final com checksums, licenças e regressão.",
   "levels": 5,
-  "authorEmail": "lucca-castilho-costa@resgate-digital.invalid",
+  "authorEmail": "luccacc.contato@gmail.com",
   "gitHubAccountVerified": false,
   "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
-  "humanReview": "Pendente de confirmação pelos integrantes"
+  "humanReview": "Pendente de confirmação pelos integrantes",
+  "identitySource": "E-mail fornecido pelo usuário"
 }

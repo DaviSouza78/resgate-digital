@@ -49,7 +49,7 @@ for stage in json.loads((root / 'versions.json').read_text(encoding='utf-8'))['v
     v=stage['version']
     text=source.replace('Versão do GDD: 1.0.0.',f'Versão do GDD: {v}.')
     if v!='1.0.0':
-        note=f"## Escopo desta etapa local\n\nResponsável designado: {stage['responsible']}. Função: {stage['role']}. Esta build contém {stage['levels']} missão(ões). Mudança da etapa: {stage['change']} As descrições das cinco fases e da esteira nas seções seguintes são o planejamento do produto final v1.0.0; funcionalidades posteriores não estão presentes nesta etapa. Não houve publicação nem registro histórico no Git.\n\n"
+        note=f"## Escopo desta etapa\n\nResponsável designado: {stage['responsible']}. Função: {stage['role']}. Esta build contém {stage['levels']} missão(ões). Mudança da etapa: {stage['change']} As descrições das cinco fases e da esteira nas seções seguintes referem-se ao produto final v1.0.0; funcionalidades posteriores não estão presentes nesta etapa. Snapshot cumulativo preparado com IA e registrado na data real, sem alegação de desenvolvimento humano anterior.\n\n"
         title,remaining=text.split('\n\n',1)
         text=title+'\n\n'+note+remaining
     write_pdf(text,root / 'output' / 'pdf' / 'etapas' / f'GDD-v{v}.pdf',v)

@@ -5,8 +5,9 @@
   "role": "Desenvolvimento e Qualidade",
   "change": "Execução animada com destaque do comando atual e feedback de colisão.",
   "levels": 1,
-  "authorEmail": "miguel-oliveira-de-almeida@resgate-digital.invalid",
+  "authorEmail": "miguel.senai2024@gmail.com",
   "gitHubAccountVerified": false,
   "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
-  "humanReview": "Pendente de confirmação pelos integrantes"
+  "humanReview": "Pendente de confirmação pelos integrantes",
+  "identitySource": "E-mail fornecido pelo usuário"
 }

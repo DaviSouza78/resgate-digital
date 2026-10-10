@@ -5,8 +5,9 @@
   "role": "SRE e Segurança",
   "change": "Persistência local validada de progresso, aviso de privacidade e botão para apagar dados locais.",
   "levels": 3,
-  "authorEmail": "lucca-castilho-costa@resgate-digital.invalid",
+  "authorEmail": "luccacc.contato@gmail.com",
   "gitHubAccountVerified": false,
   "preparation": "Snapshot cumulativo do protótipo, preparado e commitado com IA sob autorização do usuário.",
-  "humanReview": "Pendente de confirmação pelos integrantes"
+  "humanReview": "Pendente de confirmação pelos integrantes",
+  "identitySource": "E-mail fornecido pelo usuário"
 }

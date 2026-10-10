@@ -1,0 +1,50 @@
+{
+  "scope": "Servidor HTTP local controlado; não representa incidente público",
+  "observations": [
+    {
+      "time": "2026-10-10T01:59:02.708Z",
+      "environment": "exercicio",
+      "status": 503,
+      "latencyMs": 2193,
+      "version": "exercicio",
+      "commit": null,
+      "error": null
+    },
+    {
+      "time": "2026-10-10T01:59:06.476Z",
+      "environment": "exercicio",
+      "status": 200,
+      "latencyMs": 4,
+      "version": "exercicio",
+      "commit": null,
+      "error": null
+    }
+  ],
+  "changes": [
+    {
+      "kind": "JogoForaDoAr",
+      "action": "opened",
+      "url": "https://github.com/DaviSouza78/resgate-digital/issues/3",
+      "number": 3
+    },
+    {
+      "kind": "LatenciaAlta",
+      "action": "opened",
+      "url": "https://github.com/DaviSouza78/resgate-digital/issues/4",
+      "number": 4
+    },
+    {
+      "kind": "JogoForaDoAr",
+      "action": "closed",
+      "url": "https://github.com/DaviSouza78/resgate-digital/issues/3",
+      "number": 3
+    },
+    {
+      "kind": "LatenciaAlta",
+      "action": "closed",
+      "url": "https://github.com/DaviSouza78/resgate-digital/issues/4",
+      "number": 4
+    }
+  ],
+  "passed": true
+}

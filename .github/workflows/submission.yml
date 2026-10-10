@@ -7,10 +7,10 @@ on:
         required: true
       rollback_run:
         description: ID da demonstração pública de rollback aprovada
-        required: true
+        required: false
       alerts_run:
         description: ID do exercício de alertas aprovado
-        required: true
+        required: false
 permissions:
   contents: read
   actions: read
@@ -41,12 +41,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: site
       - uses: actions/download-artifact@v8
+        if: inputs.rollback_run != ''
         with:
           name: rollback-publico
           run-id: ${{ inputs.rollback_run }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: output/relatorios
       - uses: actions/download-artifact@v8
+        if: inputs.alerts_run != ''
         with:
           name: exercicio-alertas
           run-id: ${{ inputs.alerts_run }}

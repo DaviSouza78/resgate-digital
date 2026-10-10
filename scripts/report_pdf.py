@@ -20,6 +20,7 @@ def paragraph(text):
     story.append(Spacer(1, 12))
 def evidence(name):
     p = out / 'relatorios' / name
+    if not p.exists(): p=root/'docs'/'evidencias'/name
     return json.loads(p.read_text('utf-8')) if p.exists() else None
 def page(): story.append(PageBreak())
 heading('Resgate Digital — Relatório técnico')

@@ -182,7 +182,7 @@ jobs:
         with:
           name: site-build
           path: site
-      - name: Publicar as doze releases a partir do mesmo build
+      - name: Preservar as doze etapas e publicar a entrega atual
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/releases.cjs

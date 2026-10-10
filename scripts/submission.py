@@ -8,6 +8,10 @@ from pypdf import PdfReader
 
 root=Path(__file__).resolve().parent.parent
 output=root/'output'; target=output/'submissao';target.mkdir(parents=True,exist_ok=True)
+for name in ['rollback-publico.json','alertas-exercicio.json']:
+    archived=root/'docs'/'evidencias'/name;report=output/'relatorios'/name
+    if archived.exists() and not report.exists():
+        report.parent.mkdir(parents=True,exist_ok=True);report.write_bytes(archived.read_bytes())
 config=json.loads((root/'submission.json').read_text('utf-8'))
 sources={'GDD.pdf':output/'pdf'/'GDD.pdf','Relatorio-tecnico.pdf':output/'pdf'/'Relatorio-tecnico.pdf','build.zip':output/'build.zip','build.zip.sha256':output/'build.zip.sha256','pitch.mp4':output/'video'/'pitch.mp4','pitch.srt':output/'video'/'pitch.srt','version.json':root/'dist'/'version.json','SBOM.cdx.json':output/'relatorios'/'npm-sbom.cdx.json'}
 for name in ['SQUAD.md','contributors.json','LICENSE','THIRD_PARTY.md','AI-USAGE.md','submission.json']: sources[name]=root/name

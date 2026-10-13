@@ -194,10 +194,154 @@
       "version": "1.0.0",
       "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
       "error": null
+    },
+    {
+      "time": "2026-10-12T01:24:48.197Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 206,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T01:24:48.197Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 95,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T07:56:06.293Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 140,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T07:56:06.293Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 37,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T17:46:20.781Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 421,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T17:46:20.781Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 289,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T23:48:44.175Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 244,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-12T23:48:44.175Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 112,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T03:58:08.512Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 681,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T03:58:08.512Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 260,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T11:40:30.176Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 407,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T11:40:30.176Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 53,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T18:32:06.181Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 247,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T18:32:06.181Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 117,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T23:05:05.542Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 206,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-10-13T23:05:05.542Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 64,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
     }
   ],
   "dora": {
-    "deploymentFrequency": 0.56,
+    "deploymentFrequency": 0.26,
     "leadTimeMinutes": 8.966666666666667,
     "changeFailureRate": 0,
     "recoveryMinutes": null,

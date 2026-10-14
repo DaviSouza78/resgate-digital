@@ -370,5 +370,23 @@
     "version": "1.0.0",
     "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
     "error": null
+  },
+  {
+    "time": "2026-10-14T17:33:55.863Z",
+    "environment": "producao",
+    "status": 200,
+    "latencyMs": 221,
+    "version": "1.0.0",
+    "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+    "error": null
+  },
+  {
+    "time": "2026-10-14T17:33:55.863Z",
+    "environment": "homologacao",
+    "status": 200,
+    "latencyMs": 92,
+    "version": "1.0.0",
+    "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+    "error": null
   }
 ]

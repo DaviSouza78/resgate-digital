@@ -1,5 +1,5 @@
 {
-  "deploymentFrequency": 0.18,
+  "deploymentFrequency": 0.17,
   "leadTimeMinutes": 8.966666666666667,
   "changeFailureRate": 0,
   "recoveryMinutes": null,

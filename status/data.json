@@ -2822,6 +2822,42 @@
       "version": "1.0.0",
       "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
       "error": null
+    },
+    {
+      "time": "2026-11-09T09:40:40.834Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 411,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-09T09:40:40.834Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 82,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-09T20:11:57.760Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 249,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-09T20:11:57.760Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 310,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
     }
   ],
   "dora": {

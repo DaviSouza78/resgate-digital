@@ -3794,6 +3794,78 @@
       "version": "1.0.0",
       "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
       "error": null
+    },
+    {
+      "time": "2026-11-25T02:36:02.251Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 234,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-25T02:36:02.251Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 194,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-25T11:41:34.225Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 231,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-25T11:41:34.225Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 98,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-25T20:42:27.836Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 356,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-25T20:42:27.836Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 274,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-26T03:13:37.186Z",
+      "environment": "producao",
+      "status": 200,
+      "latencyMs": 144,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
+    },
+    {
+      "time": "2026-11-26T03:13:37.186Z",
+      "environment": "homologacao",
+      "status": 200,
+      "latencyMs": 35,
+      "version": "1.0.0",
+      "commit": "45fe0f4f3f05276c8bb4850e5c168dfe14c8c34e",
+      "error": null
     }
   ],
   "dora": {
